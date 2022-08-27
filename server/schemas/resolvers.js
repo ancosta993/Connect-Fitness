@@ -23,7 +23,7 @@ const resolvers = {
          if(!user){
             AuthenticationError('Invalid Credintials')
          }
-         const correctPw = await User.isCorrectPassword(password)
+         const correctPw = await user.isCorrectPassword(password)
          if (!correctPw) {
             AuthenticationError('Invalid Credentials')
          }
