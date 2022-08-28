@@ -12,10 +12,13 @@ const resolvers = {
          const user = await User.findOne({username});
          return user;
       },
-      me: async(parents, args) => {
-         const userData = await User.findOne({})
-            .select('-_v -password')
-         return userData;
+      me: async(parents, args, context) => {
+         if (context.user) {
+            const userData = await User.findOne({ _id: context.user._id })
+               .select('-_v -password')
+            return userData;
+         }
+         throw new AuthenticationError("User Not Logged In")
       }
    },
 
