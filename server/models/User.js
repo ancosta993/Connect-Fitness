@@ -1,5 +1,6 @@
 const {Schema, model} = require('mongoose');
 const bcrypt = require('bcrypt');
+const Diet = require('./Diet');
 
 // defining the user schema
 const userSchema = new Schema(
@@ -21,7 +22,20 @@ const userSchema = new Schema(
          required: true,
          unique: true,
          minlength: 5
-      }
+      },
+      // reference the Diet model. A user is going to have a list of diets
+      diet: [
+         {
+            type: Schema.Types.ObjectId,
+            ref: 'Diet'
+         }
+      ],
+      // routing: [
+      //    {
+      //       type: Schema.Types.ObjectId,
+      //       ref: 'Rotine'
+      //    }
+      // ]
    }
 )
 
