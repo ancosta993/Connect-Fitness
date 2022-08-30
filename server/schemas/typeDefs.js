@@ -6,6 +6,16 @@ const typeDefs = gql `
       username: String!
       password: String!
       email: String!
+      diet: [Diet]
+   }
+
+   type Diet {
+      _id: ID
+      name: String
+      mealTime: String
+      calorie: Int
+      username: String
+      Details: String
    }
 
    type Auth {
@@ -17,6 +27,7 @@ const typeDefs = gql `
       users: [User]
       user(username: String!): User
       me: User
+      diet: Diet
    }
 
    type Mutation {
