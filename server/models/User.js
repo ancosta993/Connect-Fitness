@@ -30,12 +30,12 @@ const userSchema = new Schema(
             ref: 'Diet'
          }
       ],
-      // routing: [
-      //    {
-      //       type: Schema.Types.ObjectId,
-      //       ref: 'Rotine'
-      //    }
-      // ]
+      routing: [
+         {
+            type: Schema.Types.ObjectId,
+            ref: 'Rotine'
+         }
+      ]
    }
 )
 

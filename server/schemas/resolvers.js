@@ -20,6 +20,13 @@ const resolvers = {
          }
          throw new AuthenticationError("User Not Logged In")
       },
+      
+      diet: async(parents, args, context) => {
+         if (context.user) {
+            return await Diet.find()
+               .select('-__V');
+         }
+      }
    },
 
    Mutation: {
@@ -42,18 +49,19 @@ const resolvers = {
          const token = signToken(user);
          return { token, user };
       },
+
       addDiet: async(parents, args, context) => {
          if(context.user) {
             const newDiet = await  Diet.create({...args, username: context.user.username});
+
+            await User.findByIdAndUpdate(
+               {_id:context.user._id},
+               {$push: {diet: newDiet._id}},
+               { new: true }
+            );
+   
+            return newDiet;
          }
-
-         await User.findByIdAndUpdate(
-            {_id:context.user._id},
-            {$push: {diet: newDiet._id}},
-            { new: true }
-         );
-
-         return newDiet;
 
          throw new AuthenticationError('You need to be logged In!');
       },
