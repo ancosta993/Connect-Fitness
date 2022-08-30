@@ -9,23 +9,25 @@ const resolvers = {
            .select('-__v -password')
       },
       user: async(parents, {username}) => {
-         const user = await User.findOne({username});
-         return user;
+         return User.findOne({username})
+            .select('-__v -password')
+            .populate('diet')
+
       },
       me: async(parents, args, context) => {
          if (context.user) {
             const userData = await User.findOne({ _id: context.user._id })
                .select('-_v -password')
+               .populate('diet')
+
             return userData;
          }
          throw new AuthenticationError("User Not Logged In")
       },
-      
-      diet: async(parents, args, context) => {
-         if (context.user) {
-            return await Diet.find()
-               .select('-__V');
-         }
+
+      diets: async(parents, {username}) => {
+         const params = username ? {username} : {};
+         return Diet.find(params);
       }
    },
 

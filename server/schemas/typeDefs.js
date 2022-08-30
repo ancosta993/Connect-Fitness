@@ -11,11 +11,11 @@ const typeDefs = gql `
 
    type Diet {
       _id: ID
-      name: String
-      mealTime: String
-      calorie: Int
-      username: String
-      details: String
+      name: String!
+      mealTime: String!
+      calorie: Int!
+      username: String!
+      details: String!
    }
 
    type Auth {
@@ -27,13 +27,13 @@ const typeDefs = gql `
       users: [User]
       user(username: String!): User
       me: User
-      diet: Diet
+      diets(username: String): [Diet]
    }
 
    type Mutation {
       addUser(username: String!, email:String!, password: String!): Auth
       login(email:String!, password: String!): Auth
-      addDiet(name: String!, mealTime: String!, calorie: Int, username: String!, details: String!): Diet
+      addDiet(name: String!, mealTime: String!, calorie: Int, details: String!): Diet
    }
 `;
 
