@@ -1,4 +1,4 @@
-const { User, Diet }  = require('../models');
+const { User, Diet, Routine}  = require('../models');
 const {AuthenticationError} = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -12,6 +12,7 @@ const resolvers = {
          return User.findOne({username})
             .select('-__v -password')
             .populate('diet')
+            .populate('routine');
 
       },
       me: async(parents, args, context) => {
@@ -19,6 +20,7 @@ const resolvers = {
             const userData = await User.findOne({ _id: context.user._id })
                .select('-_v -password')
                .populate('diet')
+               .populate('routine');
 
             return userData;
          }
@@ -28,6 +30,10 @@ const resolvers = {
       diets: async(parents, {username}) => {
          const params = username ? {username} : {};
          return Diet.find(params);
+      },
+      routines: async(parents, {username}) => {
+         const params = username ? {username} : {};
+         return Routine.find(params);
       }
    },
 
@@ -54,7 +60,7 @@ const resolvers = {
 
       addDiet: async(parents, args, context) => {
          if(context.user) {
-            const newDiet = await  Diet.create({...args, username: context.user.username});
+            const newDiet = await Diet.create({...args, username: context.user.username});
 
             await User.findByIdAndUpdate(
                {_id:context.user._id},
@@ -67,6 +73,21 @@ const resolvers = {
 
          throw new AuthenticationError('You need to be logged In!');
       },
+      addRoutine: async(parents, args, context) => {
+         if(context.user) {
+            const newRoutine = await Routine.create({...args, username: context.user.username});
+
+            await User.findByIdAndUpdate(
+               {_id:context.user._id},
+               {$push: {routine: newRoutine._id}},
+               { new: true }
+            );
+   
+            return newRoutine;
+         }
+
+         throw new AuthenticationError('You need to be logged In!');
+      }
    }
 
 }

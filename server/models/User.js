@@ -30,10 +30,10 @@ const userSchema = new Schema(
             ref: 'Diet'
          }
       ],
-      routing: [
+      routine: [
          {
             type: Schema.Types.ObjectId,
-            ref: 'Rotine'
+            ref: 'Routine'
          }
       ]
    }
