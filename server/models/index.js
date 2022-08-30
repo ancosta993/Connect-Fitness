@@ -1,3 +1,4 @@
 const User = require('./User');
+const Routine = require('./Routine')
 
-module.exports = {User};
+module.exports = {User, Routine};
