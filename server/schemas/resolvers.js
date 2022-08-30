@@ -1,4 +1,4 @@
-const { User }  = require('../models');
+const { User, Diet }  = require('../models');
 const {AuthenticationError} = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -19,7 +19,7 @@ const resolvers = {
             return userData;
          }
          throw new AuthenticationError("User Not Logged In")
-      }
+      },
    },
 
    Mutation: {
@@ -41,7 +41,22 @@ const resolvers = {
          
          const token = signToken(user);
          return { token, user };
-      }
+      },
+      addDiet: async(parents, args, context) => {
+         if(context.user) {
+            const newDiet = await  Diet.create({...args, username: context.user.username});
+         }
+
+         await User.findByIdAndUpdate(
+            {_id:context.user._id},
+            {$push: {diet: newDiet._id}},
+            { new: true }
+         );
+
+         return newDiet;
+
+         throw new AuthenticationError('You need to be logged In!');
+      },
    }
 
 }

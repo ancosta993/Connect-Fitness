@@ -20,7 +20,7 @@ const dietSchema = new Schema(
          type: String,
          required: true
       },
-      Details:{
+      details:{
          type: String
       }
    }
