@@ -1,5 +1,5 @@
 import './App.css';
-import SignupPage from './component/SignupPage';
+import SignupPage from './component/pages/SignupPage';
 
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
