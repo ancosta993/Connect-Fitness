@@ -1,7 +1,9 @@
 import './App.css';
-import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink} from '@apollo/client';
+import UserList from './component/UsersList';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
-const httpLink = createhHttplink({
+
+const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
 });
 
@@ -13,10 +15,8 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="App">
-        <header className="App-header">
-          
-        </header>
+      <div>
+        <UserList />
       </div>
     </ApolloProvider>
     
