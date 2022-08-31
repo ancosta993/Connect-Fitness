@@ -11,3 +11,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Sign Up form Style */
+.signup-title {
+  text-align: center;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3)
+}
+
+.signup-form{
+  display:flex;
+  flex-direction: column;
+  margin:5% auto;
+  padding: 2rem 0;
+  align-items: center;
+  width:40%;
+  height:50%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.signup-form > div {
+  margin-bottom: 1rem;
+}
+
+.signup-placeholder{
+  background-color:blue;
+  height:100px;
+  width:40%;
+  height:100vh;
+  color:white;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  font-size:5rem;
+  text-align: center;
+  padding-top:30vh;
+}
+
+.signup-container{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+
+
+
+/* form media query */
+@media screen and (max-width: 860px) {
+  .signup-container{
+    flex-direction: column;
+  }
+  .signup-placeholder{
+    height:10vh;
+    padding-top:2vh;
+    padding-bottom:2vh;
+    font-size:2rem;
+    width:100%;
+  }
+  .signup-form {
+    width:100%;
+  }
+}

@@ -1,5 +1,6 @@
 import './App.css';
-import UserList from './component/UsersList';
+import SignupPage from './component/SignupPage';
+
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
 
@@ -16,7 +17,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-        <UserList />
+        <SignupPage></SignupPage>
       </div>
     </ApolloProvider>
     
