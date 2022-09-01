@@ -1,5 +1,7 @@
 import './App.css';
+import React, {useState} from 'react';
 import SignupPage from './component/pages/SignupPage';
+import LoginPage from './component/pages/LoginPage';
 
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
@@ -14,11 +16,14 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('Signup');
+
   return (
     <ApolloProvider client={client}>
-      <div>
-        <SignupPage></SignupPage>
-      </div>
+       {currentPage === "Signup" ? <SignupPage setCurrentPage={setCurrentPage}></SignupPage>
+        :
+        <LoginPage setCurrentPage={setCurrentPage} ></LoginPage>
+        }
     </ApolloProvider>
     
   );

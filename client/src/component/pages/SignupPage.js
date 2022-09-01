@@ -4,7 +4,7 @@ import TextField  from '@mui/material/TextField';
 import {useMutation} from '@apollo/client';
 import {ADD_USER} from '../../utils/mutations'
 
-const SignupPage = () => {
+const SignupPage = ({setCurrentPage}) => {
    const [addUser, { error }] = useMutation(ADD_USER);
    const [formData, setFormData] = useState({username: '', email:'', password: ''});
    // use this function to link the state with the form data.
@@ -26,9 +26,12 @@ const SignupPage = () => {
       } catch(e) {
          console.error(e);
       }
+   };
+
+   const handlePage = () => {
+      setCurrentPage('Login');
    }
 
-  
    return(
       <section className='signup-container'>
          <div className='signup-placeholder'>Text</div>
@@ -48,7 +51,9 @@ const SignupPage = () => {
                   Signup
                </Button>
             </div>
-            
+            <div>
+               Already a member? <Button onClick={handlePage} variant='oulined'>Login</Button> Instead
+            </div>
          </form>
       </section>
       
