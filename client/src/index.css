@@ -51,7 +51,10 @@ code {
   flex-wrap: wrap;
 }
 
-
+/* testing the Link router component */
+a{
+  all:inherit;
+}
 
 
 /* form media query */
