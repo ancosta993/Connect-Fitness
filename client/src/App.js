@@ -6,9 +6,10 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import SignupPage from './component/pages/SignupPage';
 import LoginPage from './component/pages/LoginPage';
 import NoMatch from './component/pages/NoMatch';
+import Home from './component/pages/Home';
 
-import Header from './component/Header';
-import UsersList from './component/UsersList'
+import Header from './component/Header/';
+import UsersList from './component/UsersList/'
 // import Footer from './component/Footer';
 
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
@@ -44,7 +45,7 @@ function App() {
           <Routes>
             <Route 
               path='/'
-              element={<UsersList />}
+              element={<Home />}
             />
             <Route
               path='/signup'
