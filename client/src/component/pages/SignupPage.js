@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Button from '@mui/material/Button';
 import TextField  from '@mui/material/TextField';
+import Auth from '../../utils/auth';
 import {useMutation} from '@apollo/client';
 import {ADD_USER} from '../../utils/mutations'
 
@@ -22,7 +23,7 @@ const SignupPage = () => {
       // handle error with try/catch method
       try {
          const {data} = await addUser({variables: {...formData}})
-         console.log(data);
+         Auth.login(data.addUser.token);
       } catch(e) {
          console.error(e);
       }

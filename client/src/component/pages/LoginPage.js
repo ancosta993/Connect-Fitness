@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Button from '@mui/material/Button';
 import TextField  from '@mui/material/TextField';
+import Auth from '../../utils/auth';
 import {useMutation} from '@apollo/client';
 import {LOGIN_USER} from '../../utils/mutations'
 
@@ -22,7 +23,7 @@ const LoginPage = () => {
       // handle error with try/catch method
       try {
          const {data} = await login({variables: {...formData}})
-         console.log(data);
+         Auth.login(data.login.token);
       } catch(e) {
          console.error(e);
       }
