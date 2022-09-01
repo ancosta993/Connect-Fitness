@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 import Button from '@mui/material/Button';
 import TextField  from '@mui/material/TextField';
+import {useMutation} from '@apollo/client';
+import {ADD_USER} from '../../utils/mutations'
 
 const SignupPage = () => {
+   const [addUser, { error }] = useMutation(ADD_USER);
    const [formData, setFormData] = useState({username: '', email:'', password: ''});
-
+   // use this function to link the state with the form data.
    const handleChange = (event) => {
       const { name, value } = event.target;
   
@@ -14,9 +17,15 @@ const SignupPage = () => {
       });
     };
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
-      console.log(formData);
+      // handle error with try/catch method
+      try {
+         const {data} = await addUser({variables: {...formData}})
+         console.log(data);
+      } catch(e) {
+         console.error(e);
+      }
    }
 
   
