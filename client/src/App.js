@@ -7,11 +7,11 @@ import SignupPage from './component/pages/SignupPage';
 import LoginPage from './component/pages/LoginPage';
 import NoMatch from './component/pages/NoMatch';
 import Home from './component/pages/Home';
+import Routine from './component/pages/Routine';
 
 import Header from './component/Header/';
-import UsersList from './component/UsersList/'
+import UsersList from './component/UsersList/';
 import Footer from './component/Footer';
-// import Footer from './component/Footer';
 
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
@@ -59,6 +59,10 @@ function App() {
             <Route
               path='/meetothers'
               element={<UsersList />}
+            />
+            <Route
+              path='/newroutine'
+              element={<Routine />}
             />
             {/* Wild Card Route */}
             <Route
