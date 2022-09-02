@@ -7,9 +7,9 @@ import SignupPage from './component/pages/SignupPage';
 import LoginPage from './component/pages/LoginPage';
 import NoMatch from './component/pages/NoMatch';
 import Home from './component/pages/Home';
+import UsersPage from './component/pages/UsersPage'
 
 import Header from './component/Header/';
-import UsersList from './component/UsersList/'
 import Footer from './component/Footer';
 // import Footer from './component/Footer';
 
@@ -58,7 +58,7 @@ function App() {
             />
             <Route
               path='/meetothers'
-              element={<UsersList />}
+              element={<UsersPage />}
             />
             {/* Wild Card Route */}
             <Route
