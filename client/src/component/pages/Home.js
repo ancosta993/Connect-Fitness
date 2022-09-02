@@ -19,7 +19,7 @@ const Home = () => {
    return(
       <>
          <CarouselComp items={carItems}/>
-         <Box type='div' sx={{mt: "10px"}}>
+         <Box  component='div' sx={{mt: "10px", backgroundColor:'#0F0326'}}>
             <Grid container spacing={3}>
                <Grid item xs={12} md={9}>
                   <HomeCard />
