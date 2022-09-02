@@ -10,6 +10,7 @@ import Home from './component/pages/Home';
 
 import Header from './component/Header/';
 import UsersList from './component/UsersList/'
+import Footer from './component/Footer';
 // import Footer from './component/Footer';
 
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
@@ -65,6 +66,7 @@ function App() {
               element={<NoMatch />}
             />
           </Routes>
+        <Footer/>
       </Router>
        
     </ApolloProvider>

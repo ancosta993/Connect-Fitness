@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 import CarouselComp from '../CarouselComp';
 import HomeCard from '../HomeCard';
 // import the pictures to render in carousel
 import image_1 from "../../assets/carousel_image/carousel-image-1.jpg";
 import image_2 from "../../assets/carousel_image/carousel-image-2.jpg";
 import image_3 from "../../assets/carousel_image/carousel-image-3.jpg";
+import { Typography } from '@mui/material';
 
 const Home = () => {
 
@@ -19,19 +21,20 @@ const Home = () => {
    return(
       <>
          <CarouselComp items={carItems}/>
-         <Box  component='div' sx={{mt: "10px", backgroundColor:'#0F0326'}}>
+         <Box component='div' sx={{pt: "2em", pb:"2em", backgroundColor:'white'}}>
             <Grid container spacing={3}>
                <Grid item xs={12} md={9}>
                   <HomeCard />
                </Grid>
                <Grid item xs={12} md={3}>
-                  <div style={{background: 'gray'}}>
-                     Side Stuff
-                  </div>
+                  <Box component='div' style={{background: 'gray'}}>
+                     <Paper sx={{height:"100px"}}>
+                        Content
+                     </Paper>
+                  </Box>
                </Grid>
             </Grid>
          </Box>
-         
       </>
       
    )

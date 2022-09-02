@@ -17,13 +17,13 @@ const HomeCard = () => {
          <Grid item xs={4} md={4}>
             <Card>
                <CardHeader 
-                  sx={{backgroundColor:"#B5D99C"}}
+                  sx={{backgroundColor:"#1976d2", color:'white'}}
                   action ={
-                     <IconButton sx={{color:'#0F0326'}}>
+                     <IconButton sx={{color:'white'}}>
                         <BiDumbbell />
                      </IconButton>
                   }
-                  title = 'Shoe Off Your Routine'
+                  title = 'Show Off Your Routine'
                   subheader = 'For others aswell!'
                />
                <CardMedia 
@@ -51,9 +51,9 @@ const HomeCard = () => {
          <Grid item xs={4} md={4}>
             <Card>
                <CardHeader
-                  sx={{backgroundColor:"#B5D99C"}}
+                  sx={{backgroundColor:"#1976d2", color:'white'}}
                   action = {
-                     <IconButton sx={{color:'#0F0326'}}>
+                     <IconButton sx={{color:'white'}}>
                         <MdFoodBank />
                      </IconButton>
                   }
@@ -83,9 +83,9 @@ const HomeCard = () => {
          <Grid item xs={4} md={4}>
             <Card>
                <CardHeader 
-                  sx={{backgroundColor:"#B5D99C"}}
+                  sx={{backgroundColor:"#1976d2", color:'white'}}
                   action = {
-                     <IconButton sx={{color:'#0F0326'}}>
+                     <IconButton sx={{color:'white'}}>
                         <TiGroup />
                      </IconButton>
                   }
@@ -99,7 +99,7 @@ const HomeCard = () => {
                />
                 <CardContent sx={{backgroundColor:'#F5F7DC'}}>
                   <Typography variant='body2' color='textSecondary'>
-                     See what others are doing! Remember, you can always learn from others who maybe an expert or have just began just like you. You can use tags to filter your search.
+                     Create your personal routine and share it others! Create your routine now!
                   </Typography>
                </CardContent>
                <CardActions sx={{backgroundColor:'#F5F7DC'}}>
