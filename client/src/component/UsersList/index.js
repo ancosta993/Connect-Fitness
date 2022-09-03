@@ -32,7 +32,6 @@ const UsersList = ({users}) => {
                            </div>
                         }
                         
-                        
                      />
                      <CardContent>
                         <TypoGraphy>
