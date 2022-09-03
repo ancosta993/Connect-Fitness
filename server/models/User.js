@@ -1,6 +1,6 @@
 const {Schema, model} = require('mongoose');
 const bcrypt = require('bcrypt');
-const Diet = require('./Diet');
+;
 
 
 // defining the user schema

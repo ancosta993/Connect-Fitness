@@ -14,24 +14,15 @@ import {ADD_USER} from '../../utils/mutations'
 
 const SignupPage = () => {
    const [addUser, { error }] = useMutation(ADD_USER);
-   const [formData, setFormData] = useState({username: '', email:'', password: '', weight:'', gender:'', level:'', description:''});
+   const [formData, setFormData] = useState({username: '', email:'', password: '', weight:'', gender:'', level:'', description:'', dateOfBirth:""});
    // use this function to link the state with the form data.
    const handleChange = (event) => {
-      const { name, value } = event.target;
-  
+      let { name, value } = event.target;
       setFormData({
         ...formData,
         [name]: value,
       });
     };
-
-    const handleAge = (event) => {
-      const value = event.target.value.replace('/','-');
-      setFormData({
-         ...formData,
-      [event.target.name]: value}
-      )
-    }
 
    const handleSubmit = async (e) => {
       e.preventDefault();
@@ -60,7 +51,7 @@ const SignupPage = () => {
                <TextField sx={{width:'35ch'}} name='email' type='email' label='Email' variant='outlined' onChange={handleChange}  value={formData.email} required/>
             </div>
             <div>
-               <TextField sx={{width:'21ch', mr:"1ch"}} name='dateOfBirth' variant='outlined' onChange={handleAge}  type ="date" required/>
+               <TextField sx={{width:'21ch', mr:"1ch"}} name='dateOfBirth' variant='outlined' onChange={handleChange} value={formData.dateOfBirth}  type ="date" required/>
 
                <TextField sx={{width:'13ch'}} name='weight' label='Weight' variant='outlined' onChange={handleChange}  value={formData.weight} required/>
             </div>
@@ -101,11 +92,10 @@ const SignupPage = () => {
                name='description'
                value={formData.description}
                onChange={handleChange}
-               placeholder='Tell us somethine about yourself..'
+               placeholder='Tell us something about yourself..'
                multiline
                sx={{width:'35ch'}}
                rows={4}
-               maxRows={6}
             />
             <div>
                <Button type='submit' variant="contained" color="primary">
