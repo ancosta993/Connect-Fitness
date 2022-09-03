@@ -5,6 +5,11 @@ export const QUERY_USERS = gql`
       users {
          username
          email
+         description
+         weight
+         age
+         level
+         gender
       }
    }
 `;

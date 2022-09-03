@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
@@ -8,36 +8,44 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import TypoGraphy from '@mui/material/TypoGraphy';
+import Chip from '@mui/material/Chip'
 
 
 const UsersList = ({users}) => {
+
    return (
       <Box sx={{mt:'5em'}}>
          <Grid container spacing={3}>
-         {users.map(user => {
-            return(
-               <Grid item xs={12} md={6}>
+            {users.map(user => {  
+               return (<Grid key={user.username} item xs={12} md={6}>
                   <Card>
                      <CardHeader 
                         avatar = {
-                           <Avatar sx={{backgroundColor: "green"}}> {user.username[0].toUpperCase()} </Avatar>
+                           <Avatar sx={{backgroundColor: `green`}}> {user.username[0].toUpperCase()} </Avatar>
                         }
-                        title={user.username}
-                        subheader={user.email}
+                     
+                        title={`${user.username} (${user.email})`}
+                        subheader={
+                           <div style={{display:'flex', flexDirection:'column', alignItems:'flex-start', gap:'10px'}}>
+                              {`${user.age} years old, ${user.gender}`}
+                              <Chip label={user.level} variant="outlined" />
+                           </div>
+                        }
+                        
+                        
                      />
                      <CardContent>
                         <TypoGraphy>
-                           Lorem ipsum generate random text number for color. Then use that number for rendering the components in react.
+                           {user.description}
                         </TypoGraphy>
                      </CardContent>
 
                      <CardActions>
-                        <Button size='medium' variant='outlined'>Contact</Button>
+                        <Button size='medium' variant='outlined'>Visit</Button>
                         <Button size='medium' variant='outlined'>Follow</Button>
                      </CardActions>
                   </Card>
-               </Grid>
-            )
+               </Grid>)
          })}
          </Grid>
       </Box>

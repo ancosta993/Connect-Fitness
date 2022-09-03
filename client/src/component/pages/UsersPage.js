@@ -9,7 +9,7 @@ const UsersPage = () => {
    const users = data?.users || [];
 
    return (
-      <UsersList users={users} />
+      <UsersList users={users} /> 
    )
 };
 
