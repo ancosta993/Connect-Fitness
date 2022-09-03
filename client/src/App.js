@@ -7,7 +7,8 @@ import SignupPage from './component/pages/SignupPage';
 import LoginPage from './component/pages/LoginPage';
 import NoMatch from './component/pages/NoMatch';
 import Home from './component/pages/Home';
-import UsersPage from './component/pages/UsersPage'
+import UsersPage from './component/pages/UsersPage';
+import Dashboard from './component/pages/Dashboard'
 
 import Header from './component/Header/';
 import Footer from './component/Footer';
@@ -65,6 +66,11 @@ function App() {
               path="*"
               element={<NoMatch />}
             />
+            <Route
+                path="/dashboard">
+                <Route path=":username"  element={<Dashboard />} />
+                <Route path="" element={<Dashboard />} />
+              </Route>
           </Routes>
         <Footer/>
       </Router>

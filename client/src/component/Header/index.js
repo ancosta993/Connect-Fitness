@@ -56,7 +56,7 @@ const Header = () => {
           ) : (
             <>
               <Button color='inherit'>
-                <Link to='/profile'>Me</Link>
+                <Link to='/dashboard'>Me</Link>
               </Button>
               <Button color='inherit'>
                 <a href='/' onClick={logout}>
