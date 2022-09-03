@@ -2,7 +2,6 @@ const {Schema, model} = require('mongoose');
 const bcrypt = require('bcrypt');
 ;
 
-
 // defining the user schema
 const userSchema = new Schema(
    {
@@ -25,29 +24,25 @@ const userSchema = new Schema(
          minlength: 5
       },
       gender: {
-         type: String,
+         type:String,
          required: true,
-         enum:['Male', 'Female',"Gender Diverse"]
+         enum:['Male','Female','Gender Diverse']
       },
-
-      weight:{
+      weight: {
          type: Number,
          required: true
       },
-
-      level: {
-         type: String,
-         required: true,
-         enum:["Beginner", "Proficient","Casual","Expert"]
-      },
-
       dateOfBirth: {
          type: String,
          required: true
       },
-
-      description:{
+      level: {
          type: String,
+         required: true,
+         enum: ['Beginner', "Proficient","Casual","Expert"]
+      },
+      description: {
+         type: String
       },
       // reference the Diet model. A user is going to have a list of diets
       diet: [
@@ -78,7 +73,7 @@ userSchema.virtual('age').get(function() {
    if (month < 0) {
       age--
    };
-   return age;
+   return parseInt(age);
 });
 
 // pre save middleware. It will be run before a newly created user is saved in the databse

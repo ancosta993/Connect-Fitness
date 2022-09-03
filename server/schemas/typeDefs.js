@@ -6,8 +6,8 @@ const typeDefs = gql `
       username: String
       email: String
       gender: String
-      age: Int
       weight: Float
+      age: Int
       level: String
       description: String
       diet: [Diet]
@@ -51,9 +51,9 @@ const typeDefs = gql `
          email: String!, 
          password: String!,
          gender: String!,
-         dateOfBirth: String!
+         weight: Float,
+         dateOfBirth: String!,
          level: String!,
-         weight: Float!,
          description: String!): Auth
       login(email: String!, password: String!): Auth
       addDiet(name: String!, mealTime: String!, calorie: Int, details: String!): Diet

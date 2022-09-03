@@ -14,10 +14,13 @@ import {ADD_USER} from '../../utils/mutations'
 
 const SignupPage = () => {
    const [addUser, { error }] = useMutation(ADD_USER);
-   const [formData, setFormData] = useState({username: '', email:'', password: '', weight:'', gender:'', level:'', description:'', dateOfBirth:""});
+   const [formData, setFormData] = useState({username: '', email:'', password: '', gender:'', weight:'', dateOfBirth:'', level:'', description:''});
    // use this function to link the state with the form data.
    const handleChange = (event) => {
       let { name, value } = event.target;
+      if (name === 'weight') {
+         value = parseFloat(value);
+      }
       setFormData({
         ...formData,
         [name]: value,
@@ -43,17 +46,18 @@ const SignupPage = () => {
          <form className='signup-form' onSubmit={handleSubmit}>
             <h1 className='signup-title'>Let's Start!</h1>
             <div>
-               <TextField sx={{width:'17ch', mr:'1ch'}} name='username' label='Username' variant='outlined' onChange={handleChange} value={formData.username} required />
+               <TextField sx={{width:'17ch', mr:'1ch'}} name='username' label='Username' type='text' variant='outlined' onChange={handleChange} value={formData.username} required />
 
                <TextField sx={{width:'17ch'}} name='password' type='password' label='Password' variant='outlined' onChange={handleChange} value={formData.password} required />
             </div>
             <div>
                <TextField sx={{width:'35ch'}} name='email' type='email' label='Email' variant='outlined' onChange={handleChange}  value={formData.email} required/>
             </div>
+            
             <div>
-               <TextField sx={{width:'21ch', mr:"1ch"}} name='dateOfBirth' variant='outlined' onChange={handleChange} value={formData.dateOfBirth}  type ="date" required/>
+               <TextField sx={{width:'21ch', mr:"1ch"}} name='dateOfBirth' variant='outlined' onChange={handleChange} value={formData.age}  type ="date" required/>
 
-               <TextField sx={{width:'13ch'}} name='weight' label='Weight' variant='outlined' onChange={handleChange}  value={formData.weight} required/>
+               <TextField sx={{width:'13ch'}} name='weight' label='Weight' variant='outlined' type='number' onChange={handleChange}  value={formData.weight} required/>
             </div>
             {/* Choosing gender */}
             <div>
@@ -66,11 +70,10 @@ const SignupPage = () => {
                      <FormControlLabel  value='Female' control={<Radio />} label="Female" />
                      <FormControlLabel  value='Male' control={<Radio />} label="Male" />
                      <FormControlLabel  value='Gender Diverse' control={<Radio />} label="Gender Diverse" />
-
                   </RadioGroup>
                </FormControl>
             </div>
-            {/* Choosing Level */}
+           
             <div>
                <FormControl>
                   <FormLabel>What do you consider yourself?</FormLabel>
@@ -83,11 +86,10 @@ const SignupPage = () => {
                      <FormControlLabel  value='Proficient' control={<Radio />} label="Proficient" />
                      <FormControlLabel  value='Casual' control={<Radio />} label="Casual" />
                      <FormControlLabel  value='Expert' control={<Radio />} label="Expert" />
-
                   </RadioGroup>
                </FormControl>
             </div>
-            {/* Description of user */}
+            
             <TextField
                name='description'
                value={formData.description}
@@ -96,7 +98,7 @@ const SignupPage = () => {
                multiline
                sx={{width:'35ch'}}
                rows={4}
-            />
+            /> 
             <div>
                <Button type='submit' variant="contained" color="primary">
                   Signup
