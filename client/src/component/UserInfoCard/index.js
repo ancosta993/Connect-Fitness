@@ -15,9 +15,7 @@ import Chip from '@mui/material/Chip';
 import { Typography} from '@mui/material';
 import {GrEdit} from 'react-icons/gr';
 
-const UserInfoCard = () => {
-
-   
+const UserInfoCard = ({user}) => {
 
    return (
       <>
@@ -32,7 +30,9 @@ const UserInfoCard = () => {
                }
                title = {
                   <>
-                     <Typography sx={{mb:'1rem'}} variant='h3'>@anthony</Typography>
+                     <Typography sx={{mb:'1rem'}} variant='h3'>{
+                        `@${user.username}`
+                     }</Typography>
                      <Divider />
                   </>
                }
@@ -46,23 +46,23 @@ const UserInfoCard = () => {
                      <Grid item>
                         <List>
                            <ListItem>
-                              <ListItemText><Chip variant='outlined' label='Age: 20' /></ListItemText>
+                              <ListItemText><Chip variant='outlined' label={`Age: ${user.age}`} /></ListItemText>
                            </ListItem>
                            <ListItem>
-                              <ListItemText><Chip variant='outlined' label='level: Beginner' /></ListItemText>
+                              <ListItemText><Chip variant='outlined' label={`Level: ${user.level}`} /></ListItemText>
                            </ListItem>
                            <ListItem>
-                              <ListItemText><Chip variant='outlined' label='Gender: Male' /></ListItemText>
+                              <ListItemText><Chip variant='outlined' label={`Gender: ${user.gender}`} /></ListItemText>
                            </ListItem>
                            <ListItem>
-                              <ListItemText><Chip variant='outlined' label='Weight: 155 lb' /></ListItemText>
+                              <ListItemText><Chip variant='outlined' label={`Weight: ${user.weight} lbs`} /></ListItemText>
                            </ListItem>
                         </List>
                      </Grid>
 
                      <Grid item>
                         <Typography sx={{maxWidth:'50ch', mt:'2rem'}}>
-                           I am a beginner in workout routine stuff. I am looking forward to join this community and learn from others! Hoepfull, I will be able to contribute someday.
+                           {user.description}
                         </Typography>
                      </Grid>
                   </Grid>
