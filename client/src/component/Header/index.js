@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Header = () => {
   const logout = event => {
@@ -56,8 +57,17 @@ const Header = () => {
           ) : (
             <>
               <Button color='inherit'>
-                <Link to='/dashboard'>Me</Link>
+                <Link to='/dashboard'>
+                  <AccountCircleIcon sx={{ fontSize: 40 }}/>
+                </Link>
               </Button>
+
+              <Button color='inherit'>
+                <Link to='/meetothers'>
+                  MeetUp!
+                </Link>
+              </Button>
+              
               <Button color='inherit'>
                 <a href='/' onClick={logout}>
                   LOGOUT

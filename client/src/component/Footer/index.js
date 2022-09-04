@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
@@ -15,32 +16,46 @@ const Footer = () => {
             <Grid item sx={12} md={6}>
                <List>
                   <ListItem>
-                     <IconButton sx={{backgroundColor:'white', mr:"0.3em"}} > <GrHome/> </IconButton>
-                     <ListItemText primary="Home" />
+                     <Link to='/'>
+                        <IconButton sx={{backgroundColor:'white', mr:"0.3em", "&:hover": {backgroundColor: "white"}}} > <GrHome/> </IconButton>
+                        <ListItemText sx={{ "&:hover": {cursor: "pointer"}}} primary="Home" />
+                     </Link>
                   </ListItem>
+
                   <ListItem>
-                     <IconButton sx={{backgroundColor:'white', mr:"0.3em"}}> <GrContact/> </IconButton>
-                     <ListItemText primary="Contact Us" />
+                     <Link to='/contactUs'>
+                        <IconButton sx={{backgroundColor:'white', mr:"0.3em","&:hover": {backgroundColor: "white"}}}> <GrContact/> </IconButton>
+                        <ListItemText sx={{ "&:hover": {cursor: "pointer"}}} primary="Contact Us" />
+                     </Link>
                   </ListItem>
+
                   <ListItem>
-                     <IconButton sx={{backgroundColor:'white', mr:"0.3em"}}> <GrGroup/> </IconButton>
-                     <ListItemText primary="Our Team" />
+                     <Link to='/'>
+                        <IconButton sx={{backgroundColor:'white', mr:"0.3em","&:hover": {backgroundColor: "white"}}}> <GrGroup/> </IconButton>
+                        <ListItemText sx={{ "&:hover": {cursor: "pointer"}}} primary="Our Team" />
+                     </Link> 
                   </ListItem>
                </List>
             </Grid>
             <Grid item sx={12} md={6}>
                <List>
                   <ListItem>
-                     <IconButton sx={{backgroundColor:'white', mr:"0.3em"}}> <GrInstagram/> </IconButton>
-                     <ListItemText primary="Instagram" />
+                     <Link to='/'>
+                        <IconButton sx={{backgroundColor:'white', mr:"0.3em","&:hover": {backgroundColor: "white"}}}> <GrInstagram/> </IconButton>
+                        <ListItemText sx={{ "&:hover": {cursor: "pointer"}}} primary="Instagram" />
+                     </Link> 
                   </ListItem>
                   <ListItem>
-                     <IconButton sx={{backgroundColor:'white', mr:"0.3em"}}> <GrFacebook/> </IconButton>
-                     <ListItemText primary="Facebook" />
+                  <Link to='/'>
+                        <IconButton sx={{backgroundColor:'white', mr:"0.3em","&:hover": {backgroundColor: "white"}}}> <GrFacebook/> </IconButton>
+                        <ListItemText sx={{ "&:hover": {cursor: "pointer"}}} primary="Facebook" />
+                     </Link> 
                   </ListItem>
                   <ListItem>
-                     <IconButton sx={{backgroundColor:'white', mr:"0.3em"}}> <GrTwitter/> </IconButton>
-                     <ListItemText primary="Twitter" />
+                     <Link to='/'>
+                        <IconButton sx={{backgroundColor:'white', mr:"0.3em","&:hover": {backgroundColor: "white"}}}> <GrTwitter/> </IconButton>
+                        <ListItemText sx={{ "&:hover": {cursor: "pointer"}}} primary="Twitter" />
+                     </Link> 
                   </ListItem>
                </List>
             </Grid>
