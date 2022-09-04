@@ -25,7 +25,10 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_ROUTINE = gql`
-    mutation addRoutine($title: String!, $workoutText: String!, $createdAt: Date!, $username: $String!) {
-      addRoutine(title:$title, workoutText:$workoutText, createdAt:$createdAt, username:$username) 
+    mutation AddRoutine($title: String!, $workoutText: String!) {
+      addRoutine(title: $title, workoutText: $workoutText) {
+        title
+        workoutText
+    }
   }
 `;
