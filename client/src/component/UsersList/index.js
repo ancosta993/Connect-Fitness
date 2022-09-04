@@ -1,4 +1,5 @@
 import React, {useState } from 'react';
+import {Link} from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
@@ -40,7 +41,9 @@ const UsersList = ({users}) => {
                      </CardContent>
 
                      <CardActions>
-                        <Button size='medium' variant='outlined'>Visit</Button>
+                        <Button size='medium' variant='outlined'>
+                           <Link to={`/dashboard/${user.username}`}>Visit</Link>
+                        </Button>
                         <Button size='medium' variant='outlined'>Follow</Button>
                      </CardActions>
                   </Card>

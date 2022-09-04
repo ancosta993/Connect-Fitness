@@ -1,7 +1,8 @@
 import React from 'react';
-import {useParams} from 'react-router-dom';
+import Auth from '../../utils/auth';
+import { Navigate, useParams} from 'react-router-dom';
 import {useQuery} from '@apollo/client';
-import {QUERY_USERS, QUERY_ME} from '../../utils/queries';
+import {QUERY_USER, QUERY_ME} from '../../utils/queries';
 import Paper from '@mui/material/Paper';
 import UserInfoCard from '../UserInfoCard';
 import UserInfoTab from '../UserInfoTab'
@@ -10,12 +11,16 @@ const Dashboard = () => {
    const {username: userParam} = useParams();
    // if a parameter is provided in the URL, then use that parameter to render the infromation about that user.
 
-   const { loading, data } = useQuery(userParam ? QUERY_USERS : QUERY_ME, {
+   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
       variables: { username: userParam }
     });
 
     // check the data from whichever query returned the result
     const user = data?.me || data?.user || {};
+
+    if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+      return <Navigate to="/dashboard" />;
+    }
 
     if(loading) {
       return <div>Loading...</div>

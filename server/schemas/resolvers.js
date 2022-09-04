@@ -17,7 +17,7 @@ const resolvers = {
       },
       me: async(parents, args, context) => {
          if (context.user) {
-            const userData = await User.findOne({ _id: context.user._id })
+            const userData = await User.findById({ _id: context.user._id })
                .select('-_v -password')
                .populate('diet')
                .populate('routine');
