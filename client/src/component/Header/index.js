@@ -44,6 +44,11 @@ const Header = () => {
                 </Link>
               </Button>
               <Button color="inherit">
+                <Link to='/newroutine'>
+                  New Routine
+                </Link>
+              </Button>
+              <Button color="inherit">
                 <Link to='/signup'>
                   SignUp
                 </Link>

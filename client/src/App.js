@@ -12,8 +12,10 @@ import Dashboard from './component/pages/Dashboard';
 import Contact from './component/pages/Contact';
 
 import Header from './component/Header/';
+import Routine from './component/pages/Routine';
+
+import Header from './component/Header/';
 import Footer from './component/Footer';
-// import Footer from './component/Footer';
 
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
@@ -65,6 +67,10 @@ function App() {
             <Route
               path='/meetothers'
               element={<UsersPage />}
+            />
+            <Route
+              path='/newroutine'
+              element={<Routine />}
             />
             {/* Wild Card Route */}
             <Route

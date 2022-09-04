@@ -18,7 +18,8 @@ code {
   text-shadow: 2px 4px 3px rgba(0,0,0,0.3)
 }
 
-.signup-form{
+.signup-form,
+.routine-form {
   display:flex;
   flex-direction: column;
   margin:5% auto;
@@ -34,7 +35,12 @@ code {
   margin-bottom: 1rem;
 }
 
-.signup-placeholder{
+.routine-form > div {
+  margin-bottom: 3rem;
+}
+
+.signup-placeholder,
+.routine-placeholder {
   background-color:blue;
   height:100px;
   width:40%;
@@ -46,7 +52,8 @@ code {
   padding-top:30vh;
 }
 
-.signup-container{
+.signup-container,
+.routine-container {
   display:flex;
   flex-wrap: wrap;
 }
