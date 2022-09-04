@@ -21,9 +21,13 @@ const Home = () => {
    return(
       <>
          <CarouselComp items={carItems}/>
-         <Box component='div' sx={{pt: "2em", pb:"2em", backgroundColor:'white'}}>
+         <Box component='div' sx={{pt: "2em", pb:"2em", background: "linear-gradient(0deg, rgba(25,118,210,1) 10%, rgba(52,134,211,1) 47%, rgba(245,247,220,1) 82%)"}}>
             <Grid container spacing={3}>
                <Grid item xs={12} md={9}>
+                  <Typography sx={{fontWeight:"bold", textAlign:'Center', fontSize:"3rem", fontFamily:'Roboto', color:'#1976d2'}}>
+                      HERE IS WHAT TO DO
+                  </Typography>
+
                   <HomeCard />
                </Grid>
                <Grid item xs={12} md={3}>
