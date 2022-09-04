@@ -8,7 +8,8 @@ import LoginPage from './component/pages/LoginPage';
 import NoMatch from './component/pages/NoMatch';
 import Home from './component/pages/Home';
 import UsersPage from './component/pages/UsersPage';
-import Dashboard from './component/pages/Dashboard'
+import Dashboard from './component/pages/Dashboard';
+import Contact from './component/pages/Contact';
 
 import Header from './component/Header/';
 import Footer from './component/Footer';
@@ -48,6 +49,10 @@ function App() {
             <Route 
               path='/'
               element={<Home />}
+            />
+            <Route
+              path='/contact'
+              element={<Contact />}
             />
             <Route
               path='/signup'

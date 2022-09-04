@@ -23,7 +23,7 @@ const Footer = () => {
                   </ListItem>
 
                   <ListItem>
-                     <Link to='/contactUs'>
+                     <Link to='/contact'>
                         <IconButton sx={{backgroundColor:'white', mr:"0.3em","&:hover": {backgroundColor: "white"}}}> <GrContact/> </IconButton>
                         <ListItemText sx={{ "&:hover": {cursor: "pointer"}}} primary="Contact Us" />
                      </Link>
