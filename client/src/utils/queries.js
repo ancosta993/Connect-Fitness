@@ -9,3 +9,13 @@ export const QUERY_USERS = gql`
    }
 `;
 
+export const QUERY_ROUTINES = gql`
+   query routines {
+      routines {
+         username
+         title
+         workoutRoutine
+      }
+   }
+`
+
