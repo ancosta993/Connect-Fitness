@@ -30,6 +30,10 @@ const typeDefs = gql `
       workoutText: String
       createdAt: String
       username: String
+      day: String
+      reps: String
+      sets: String
+      duration: String
    }
 
    type Auth {
@@ -57,7 +61,7 @@ const typeDefs = gql `
          description: String!): Auth
       login(email: String!, password: String!): Auth
       addDiet(name: String!, mealTime: String!, calorie: Int, details: String!): Diet
-      addRoutine(title: String!, workoutText: String!): Routine
+      addRoutine(title: String!, workoutText: String!, day:String!, reps:String, sets:String, duration: String): Routine
    }
 `;
 

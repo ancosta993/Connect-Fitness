@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
@@ -43,8 +44,10 @@ const HomeCard = () => {
                      sx={{backgroundColor:'#0F0326', color:'white', 
                      "&:hover": {
                      backgroundColor: "red" }}} 
-                     size='large'>Create Now
-                  </Button>
+                     size='large'
+                     >
+                        <Link to='/newroutine'>Create Now</Link>   
+                  </Button> 
                </CardActions> 
             </Card>
          </Grid>

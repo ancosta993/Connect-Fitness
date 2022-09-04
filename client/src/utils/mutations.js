@@ -20,14 +20,21 @@ export const ADD_USER = gql`
         _id
         username
       }
-   }
+    }
+  }
 `;
 
 export const ADD_ROUTINE = gql`
-    mutation AddRoutine($title: String!, $workoutText: String!) {
-      addRoutine(title: $title, workoutText: $workoutText) {
+    mutation AddRoutine($title: String!, $workoutText: String!, $day:String!, $reps:String, $sets:String, $duration:String) {
+      addRoutine(title: $title, workoutText: $workoutText, day: $day, reps: $reps, sets: $sets, duration: $duration) {
+        _id
         title
         workoutText
+        day
+        reps
+        sets
+        duration
+        username
     }
   }
 `;

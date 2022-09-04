@@ -80,7 +80,7 @@ const resolvers = {
             const newRoutine = await Routine.create({...args, username: context.user.username});
 
             await User.findByIdAndUpdate(
-               {_id:context.user._id},
+               {_id: context.user._id},
                {$push: {routine: newRoutine._id}},
                { new: true }
             );
