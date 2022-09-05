@@ -74,11 +74,13 @@ const HomeCard = () => {
                   </Typography>
                </CardContent>
                <CardActions sx={{backgroundColor:'#F5F7DC'}}>
-               <Button variant='filled' 
+                  <Button variant='filled' 
                      sx={{backgroundColor:'#0F0326', color:'white', 
                      "&:hover": {
                      backgroundColor: "red" }}} 
-                     size='large'>Eat Now
+                     size='large'
+                     >
+                        <Link to='/newdiet'>Eat Now</Link>   
                   </Button>
                </CardActions> 
             </Card>

@@ -23,21 +23,25 @@ import Select from '@mui/material/Select';
 import Auth from '../../utils/auth';
 
 import { useMutation } from '@apollo/client';
-import { ADD_ROUTINE } from '../../utils/mutations'
+import { ADD_DIET } from '../../utils/mutations'
 
 const Routine = () => {
 
-    const [addRoutine, { error }] = useMutation(ADD_ROUTINE);
-    const [formData, setFormData] = useState({ title: '', workoutText: '', day:"", reps:"", sets:"", duration:""});
+    const [addDiet, { error }] = useMutation(ADD_DIET);
+    const [formData, setFormData] = useState({ name: '', mealTime: '', calorie:"", details:""});
 
     // error states
-    const [titleError, setTitleError] = useState(false);
-    const [workoutTextError, setWorkoutTextError] = useState(false);
-    const [dayError, setDayError] = useState(false);
-
+    const [nameError, setNameError] = useState(false);
+    const [mealTimeError, setMealTimeError] = useState(false);
+   
     const handleChange = (event) => {
         // change the value type depending on the name
         let { name, value } = event.target;
+        if (name === 'calorie'){
+            if(value) {
+               value = parseInt(value);
+            }
+        }
 
         setFormData({
             ...formData,
@@ -50,25 +54,23 @@ const Routine = () => {
         e.preventDefault();
 
         // handle errors for empty form fields
-        setTitleError(false);
-        setWorkoutTextError(false);
-        setDayError(false);
+        setNameError(false);
+        setMealTimeError(false);
+        
 
         if (formData.title === '') {
-            setTitleError(true)
+            setNameError(true)
         }
         if (formData.workoutText === '') {
-            setWorkoutTextError(true)
+            setMealTimeError(true)
         }
-        if (formData.day === '') {
-            setDayError(true)
-        }
-
+        
+        console.log(formData);
 
         try {
             if(Auth.loggedIn()){
-                const {data} = await addRoutine({ variables: {...formData}});
-                return <Navigate to='/dashboard'/>;
+                const {data} = await addDiet({ variables: {...formData}});
+                return <Navigate to='/dashboard' />
             } else {
                 handleClickOpen()
             }     
@@ -95,17 +97,16 @@ const Routine = () => {
 
         <Box className='routine-container'>
             <form noValidate style={{width:'80%'}} className='routine-form' onSubmit={handleSubmit}>
-                <h1 className='routine-title'> Share Your Routine! </h1>
+                <h1 className='routine-title'> Share Your Diet! </h1>
                 <div>
                     <TextField
-                        error={titleError}
-                        helperText = {titleError && 'Workout Title is required'}
+                        error={nameError}
+                        helperText = {nameError && 'Diet Name is required'}
                         sx={{width:'35ch'}}
-                        name='title'
-                        label='Title'
-                        placeholder='Cardio'
+                        name='name'
+                        label='Name'
                         variant='outlined'
-                        value={formData.title}
+                        value={formData.name}
                         onChange={handleChange}
                         required />
                 </div>
@@ -115,19 +116,17 @@ const Routine = () => {
                         <InputLabel>Day of the week</InputLabel>
                         <Select
                             sx={{width:'20ch'}}
-                            name='day'
-                            value={formData.day}
-                            label='Day of the week'
+                            name='mealTime'
+                            value={formData.mealTime}
+                            label='Meal Time'
                             onChange = {handleChange}
                             required
                             >
-                                <MenuItem value='Sunday'>Sunday</MenuItem>
-                                <MenuItem value='Monday'>Monday</MenuItem>
-                                <MenuItem value='Tuesday'>Tuesday</MenuItem>
-                                <MenuItem value='Wednesday'>Wednesday</MenuItem>
-                                <MenuItem value='Thursday'>Thursday</MenuItem>
-                                <MenuItem value='Friday'>Friday</MenuItem>
-                                <MenuItem value='Saturday'>Saturday</MenuItem>
+                                <MenuItem value='Breakfast'>Breakfast</MenuItem>
+                                <MenuItem value='Lunch'>Lunch</MenuItem>
+                                <MenuItem value='Dinner'>Dinner</MenuItem>
+                                <MenuItem value='Snack'>Snack</MenuItem>
+                                
 
                             </Select>
                     </FormControl>
@@ -137,42 +136,22 @@ const Routine = () => {
                     <TextField
                         sx={{width:'10ch'}}
                         type='number'
-                        name="reps"
-                        label='Reps'
-                        value={formData.reps}
-                        onChange={handleChange}
-                        />
-                    <TextField
-                        sx={{width:'10ch', mr:'1.5ch',ml:'1.5ch'}}
-                        type='number'
-                        name="sets"
-                        label='Sets'
-                        value={formData.sets}
-                        onChange={handleChange}
-                        />
-                    <TextField
-                        sx={{width:'13ch'}}
-                        type='number'
-                        name="duration"
-                        label="Duration"
-                        value={formData.duration}
-                        InputProps={{
-                            endAdornment: <InputAdornment position="end">h</InputAdornment>,
-                        }}
+                        name="calorie"
+                        label='Calorie'
+                        value={formData.calorie}
                         onChange={handleChange}
                         />
                 </div>
                 <div>
                     <TextField
-                        error={workoutTextError}
-                        helperText = {workoutTextError && 'Workout Description is required'}
+                        
                         sx={{width:'45ch'}}
-                        name="workoutText"
+                        name="details"
                         multiline rows={6}
-                        label='Workout Description'
-                        placeholder='Tell us about your routine...'
+                        label='Meal Description'
+                        placeholder='Tell us about this meal...'
                         variant='outlined'
-                        value={formData.workoutText}
+                        value={formData.details}
                         onChange={handleChange}
                         required />
                 </div>

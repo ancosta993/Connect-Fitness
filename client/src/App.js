@@ -13,6 +13,7 @@ import Contact from './component/pages/Contact';
 
 import Header from './component/Header/';
 import Routine from './component/pages/Routine';
+import Diet from './component/pages/Diet';
 
 import Footer from './component/Footer';
 
@@ -70,6 +71,10 @@ function App() {
             <Route
               path='/newroutine'
               element={<Routine />}
+            />
+            <Route
+              path='/newdiet'
+              element={<Diet />}
             />
             {/* Wild Card Route */}
             <Route
