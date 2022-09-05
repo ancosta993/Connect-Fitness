@@ -60,7 +60,7 @@ const typeDefs = gql `
          level: String!,
          description: String!): Auth
       login(email: String!, password: String!): Auth
-      addDiet(name: String!, mealTime: String!, calorie: Int, details: String!): Diet
+      addDiet(name: String!, mealTime: String!, calorie: Int, details: String): Diet
       addRoutine(title: String!, workoutText: String!, day:String!, reps:String, sets:String, duration: String): Routine
    }
 `;

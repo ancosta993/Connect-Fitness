@@ -11,7 +11,7 @@ const dietSchema = new Schema(
       mealTime:{
          type: String,
          required: true,
-         enum: ['Breakfast', 'Lunch', 'Dinner', 'Snack'] // these are the only possible values. Any other given value will through a Validation Error
+         enum: ['Breakfast', 'Lunch', 'Dinner', 'Snack'] // these are the only possible values. Any other given value will throw a Validation Error
       },
       calorie: {
          type: Number,

@@ -35,6 +35,13 @@ export const QUERY_USER = gql`
             sets
             duration
           }
+         diet{
+            _id
+            name
+            mealTime
+            calorie
+            details
+         }
       }
    }
 `;
@@ -58,7 +65,14 @@ export const QUERY_ME = gql`
             reps
             sets
             duration
-          }
+         }
+         diet{
+         _id
+         name
+         mealTime
+         calorie
+         details
+       }
       }
    }
 `;

@@ -9,6 +9,7 @@ import UserInfoTab from '../UserInfoTab'
 
 // import the routine diet and blog pages
 import RoutineComp from '../RoutineComp/RoutineComp';
+import DietComp from '../DietComp/DietComp';
 
 const Dashboard = () => {
    // required states for the Nav Tabs
@@ -52,7 +53,7 @@ const Dashboard = () => {
          )
       } else if (value===1) {
          return(
-            <div>Diet page</div>
+            <DietComp user={user} />
          )
       } else {
          return(<div>Blogs</div>)

@@ -38,3 +38,16 @@ export const ADD_ROUTINE = gql`
     }
   }
 `;
+
+export const ADD_DIET = gql`
+  mutation addDiet($name:String!, $mealTime:String!, $calorie:Int, $details:String) {
+    addDiet(name:$name, mealTime:$mealTime, calorie:$calorie,details:$details){
+      _id
+      username
+      name
+      mealTime
+      calorie
+      details
+    }
+  }
+`;
