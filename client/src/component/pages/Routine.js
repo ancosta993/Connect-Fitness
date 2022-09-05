@@ -30,6 +30,11 @@ const Routine = () => {
     const [addRoutine, { error }] = useMutation(ADD_ROUTINE);
     const [formData, setFormData] = useState({ title: '', workoutText: '', day:"", reps:"", sets:"", duration:""});
 
+    // error states
+    const [titleError, setTitleError] = useState(false);
+    const [workoutTextError, setWorkoutTextError] = useState(false);
+    const [dayError, setDayError] = useState(false);
+
     const handleChange = (event) => {
         // change the value type depending on the name
         let { name, value } = event.target;
@@ -43,13 +48,29 @@ const Routine = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
+
+        // handle errors for empty form fields
+        setTitleError(false);
+        setWorkoutTextError(false);
+        setDayError(false);
+
+        if (formData.title === '') {
+            setTitleError(true)
+        }
+        if (formData.workoutText === '') {
+            setWorkoutTextError(true)
+        }
+        if (formData.day === '') {
+            setDayError(true)
+        }
+
+
         try {
             if(Auth.loggedIn()){
                 const {data} = await addRoutine({ variables: {...formData}});
                 return <Navigate to='/profile' />;
             } else {
-                window.alert('Need to Log in first!')
+                handleClickOpen()
             }     
         } catch (e) {
             console.error(e);
@@ -77,6 +98,8 @@ const Routine = () => {
                 <h1 className='routine-title'> Share Your Routine! </h1>
                 <div>
                     <TextField
+                        error={titleError}
+                        helperText = {titleError && 'Workout Title is required'}
                         sx={{width:'35ch'}}
                         name='title'
                         label='Title'
@@ -133,14 +156,16 @@ const Routine = () => {
                         name="duration"
                         label="Duration"
                         value={formData.duration}
-                        // InputProps={{
-                        //     endAdornment: <InputAdornment position="end">h</InputAdornment>,
-                        // }}
+                        InputProps={{
+                            endAdornment: <InputAdornment position="end">h</InputAdornment>,
+                        }}
                         onChange={handleChange}
                         />
                 </div>
                 <div>
                     <TextField
+                        error={workoutTextError}
+                        helperText = {workoutTextError && 'Workout Description is required'}
                         sx={{width:'45ch'}}
                         name="workoutText"
                         multiline rows={6}
