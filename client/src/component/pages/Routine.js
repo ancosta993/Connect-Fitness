@@ -40,6 +40,23 @@ const Routine = () => {
         });
     };
 
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(formData);
+        try {
+            if(Auth.loggedIn()){
+                const {data} = await addRoutine({ variables: {...formData}});
+                return <Navigate to='/profile' />;
+            } else {
+                window.alert('Need to Log in first!')
+            }     
+        } catch (e) {
+            console.error(e);
+        }
+    
+    };
+
     //for dialog start
    const [open, setOpen] = useState(false);
 
@@ -52,22 +69,6 @@ const Routine = () => {
    };
 
    // for dialo ends
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        console.log(formData);
-        try {
-            if(Auth.loggedIn()){
-                const {data} = await addRoutine({ varaibles: { ...formData }});
-                return <Navigate to='/profile' />;
-            } else {
-                window.alert('Need to Log in first!')
-            }     
-        } catch (e) {
-            console.error(e);
-        }
-    
-    };
 
     return (
 
