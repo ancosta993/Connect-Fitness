@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Auth from '../../utils/auth';
 import { Navigate, useParams} from 'react-router-dom';
 import {useQuery} from '@apollo/client';
@@ -7,7 +7,17 @@ import Paper from '@mui/material/Paper';
 import UserInfoCard from '../UserInfoCard';
 import UserInfoTab from '../UserInfoTab'
 
+// import the routine diet and blog pages
+import RoutineComp from '../RoutineComp/RoutineComp';
+
 const Dashboard = () => {
+   // required states for the Nav Tabs
+   const [value, setValue] = useState(0);
+   const handleValueChange = (event, newValue) => {
+      setValue(newValue);
+   }
+   // required states for Nav Tabs end
+
    const {username: userParam} = useParams();
    // if a parameter is provided in the URL, then use that parameter to render the infromation about that user.
 
@@ -34,10 +44,26 @@ const Dashboard = () => {
       );
     }
 
+    // handle which page to show function
+    const handlePageDisplay = () => {
+      if(value===0){
+         return(
+            <RoutineComp user={user}/>
+         )
+      } else if (value===1) {
+         return(
+            <div>Diet page</div>
+         )
+      } else {
+         return(<div>Blogs</div>)
+      }
+   }
+
    return(
       <Paper user={user} elevation={5} sx={{mt:'5rem'}}>
          <UserInfoCard user={user} />
-         <UserInfoTab user={user} />
+         <UserInfoTab value={value} handleValueChange ={handleValueChange}/>
+         {handlePageDisplay()}
       </Paper>
       
    )

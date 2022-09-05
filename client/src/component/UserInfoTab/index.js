@@ -8,12 +8,7 @@ import FoodBankIcon from '@mui/icons-material/FoodBank';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 
 
-const UserInfoTab = () => {
-   const [value, setValue] = useState(0);
-
-   const handleValueChange = (event, newValue) => {
-      setValue(newValue);
-   }
+const UserInfoTab = ({value, handleValueChange}) => {
 
    return(
       <Box style={{display:'flex', justifyContent:'center'}}>

@@ -28,7 +28,7 @@ import { ADD_ROUTINE } from '../../utils/mutations'
 const Routine = () => {
 
     const [addRoutine, { error }] = useMutation(ADD_ROUTINE);
-    const [formData, setFormData] = useState({ title: '', workoutText: '', day:"",reps:"",sets:"", duration:""});
+    const [formData, setFormData] = useState({ title: '', workoutText: '', day:"", reps:"", sets:"", duration:""});
 
     const handleChange = (event) => {
         // change the value type depending on the name
@@ -41,7 +41,7 @@ const Routine = () => {
     };
 
     //for dialog start
-   const [open, setOpen] =useState(false);
+   const [open, setOpen] = useState(false);
 
    const handleClickOpen = () => {
      setOpen(true);
@@ -50,20 +50,21 @@ const Routine = () => {
    const handleClose = () => {
      setOpen(false);
    };
+
    // for dialo ends
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        if(Auth.loggedIn()){
-            try {
-                const{data} = await addRoutine({ varaibles: { ...formData }});
+        console.log(formData);
+        try {
+            if(Auth.loggedIn()){
+                const {data} = await addRoutine({ varaibles: { ...formData }});
                 return <Navigate to='/profile' />;
-            } catch (e) {
-                console.error(e)
-            }
-        } else {
-            handleClickOpen()
+            } else {
+                window.alert('Need to Log in first!')
+            }     
+        } catch (e) {
+            console.error(e);
         }
     
     };
@@ -80,6 +81,7 @@ const Routine = () => {
                         label='Title'
                         placeholder='Cardio'
                         variant='outlined'
+                        value={formData.title}
                         onChange={handleChange}
                         required />
                 </div>
@@ -130,9 +132,9 @@ const Routine = () => {
                         name="duration"
                         label="Duration"
                         value={formData.duration}
-                        InputProps={{
-                            endAdornment: <InputAdornment position="end">h</InputAdornment>,
-                        }}
+                        // InputProps={{
+                        //     endAdornment: <InputAdornment position="end">h</InputAdornment>,
+                        // }}
                         onChange={handleChange}
                         />
                 </div>
@@ -144,6 +146,7 @@ const Routine = () => {
                         label='Workout Description'
                         placeholder='Tell us about your routine...'
                         variant='outlined'
+                        value={formData.workoutText}
                         onChange={handleChange}
                         required />
                 </div>
@@ -152,21 +155,21 @@ const Routine = () => {
                         type='submit'
                         variant="contained"
                         color="primary">
-
                         Finish
                     </Button>
                 </div>
             </form>
+
             <Dialog 
-            open={open}
-            onClose={handleClose}
-         >
-            <DialogTitle>{"You must login to submit"}</DialogTitle>
-            <DialogActions sx={{display:'flex',justifyContent:'center'}}>
-               <Button onClick={handleClose}>Close</Button>
-               <Button><Link to='/login'>Log in</Link></Button>
-            </DialogActions>
-         </Dialog>
+                open={open}
+                onClose={handleClose}
+            >
+                <DialogTitle>{"You must login to submit"}</DialogTitle>
+                <DialogActions sx={{display:'flex',justifyContent:'center'}}>
+                <Button onClick={handleClose}>Close</Button>
+                <Button><Link to='/login'>Log in</Link></Button>
+                </DialogActions>
+            </Dialog>
         </Box>
 
     )

@@ -26,6 +26,15 @@ export const QUERY_USER = gql`
          age
          level
          gender
+         routine{
+            _id
+            title
+            workoutText
+            day
+            reps
+            sets
+            duration
+          }
       }
    }
 `;
@@ -41,13 +50,22 @@ export const QUERY_ME = gql`
          age
          level
          gender
+         routine{
+            _id
+            title
+            workoutText
+            day
+            reps
+            sets
+            duration
+          }
       }
    }
 `;
 
 export const QUERY_ROUTINES = gql`
    query routines {
-      routines {
+      routine {
          title
          workoutRoutine
       }
