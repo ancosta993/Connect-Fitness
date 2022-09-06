@@ -10,7 +10,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const AccordionComp = ({rout}) => {
    return(
-      <Box sx={{m:'auto',width:'80%'}}>
+      <Box sx={{m:'auto', width:'80%'}}>
          <Accordion>
             <AccordionSummary
                expandIcon={<ExpandMoreIcon />}

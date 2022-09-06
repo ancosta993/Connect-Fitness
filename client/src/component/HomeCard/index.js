@@ -112,7 +112,9 @@ const HomeCard = () => {
                      sx={{backgroundColor:'#0F0326', color:'white', 
                      "&:hover": {
                      backgroundColor: "red" }}} 
-                     size='large'>Meet Now
+                     size='large'
+                     >
+                        <Link to='/meetothers'>Meet Now</Link>
                   </Button>
                </CardActions> 
             </Card>

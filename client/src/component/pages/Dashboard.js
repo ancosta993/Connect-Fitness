@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Auth from '../../utils/auth';
-import { Navigate, useParams} from 'react-router-dom';
+import { Link, Navigate, useParams} from 'react-router-dom';
 import {useQuery} from '@apollo/client';
 import {QUERY_USER, QUERY_ME} from '../../utils/queries';
 import Paper from '@mui/material/Paper';

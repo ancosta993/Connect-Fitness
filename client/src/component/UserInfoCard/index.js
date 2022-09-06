@@ -11,6 +11,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import IconButton from '@mui/material/IconButton';
 import Chip from '@mui/material/Chip';
+import Button from '@mui/material/Button';
+
+import {Link} from 'react-router-dom';
 
 import { Typography} from '@mui/material';
 import {GrEdit} from 'react-icons/gr';
@@ -27,6 +30,7 @@ const UserInfoCard = ({user}) => {
                      src={require('../../assets/avater/universal-avatar-img.jpg')}
                      sx={{ width: '15rem', height: '15rem' }}
                   />
+                  
                }
                title = {
                   <>
@@ -64,6 +68,15 @@ const UserInfoCard = ({user}) => {
                         <Typography sx={{maxWidth:'50ch', mt:'2rem'}}>
                            {user.description}
                         </Typography>
+                     </Grid>
+
+                     <Grid item>
+                        <Button variant='outlined' size='small'>
+                           <Link style={{border:'none', padding:'0px'}} to='/newroutine'>Add workout</Link>
+                        </Button>
+                        <Button sx={{ml:'0.5rem'}} variant='outlined' size='small'>
+                           <Link style={{border:'none', padding:'0px'}}  to='/newdiet'>Add diet</Link>
+                        </Button>
                      </Grid>
                   </Grid>
                }
