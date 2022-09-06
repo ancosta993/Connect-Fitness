@@ -8,11 +8,11 @@ import Avatar from '@mui/material/Avatar';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
-import TypoGraphy from '@mui/material/TypoGraphy';
+import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip'
 
 
-const UsersList = ({users}) => {
+const UsersList = ({users}) => { 
 
    return (
       <Box sx={{mt:'5em'}}>
@@ -35,16 +35,15 @@ const UsersList = ({users}) => {
                         
                      />
                      <CardContent>
-                        <TypoGraphy>
+                        <Typography>
                            {user.description}
-                        </TypoGraphy>
+                        </Typography>
                      </CardContent>
 
                      <CardActions>
                         <Button size='medium' variant='outlined'>
                            <Link to={`/dashboard/${user.username}`}>Visit</Link>
                         </Button>
-                        <Button size='medium' variant='outlined'>Follow</Button>
                      </CardActions>
                   </Card>
                </Grid>)

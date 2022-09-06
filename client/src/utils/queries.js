@@ -42,6 +42,14 @@ export const QUERY_USER = gql`
             calorie
             details
          }
+         follow{
+            _id
+            username
+         }
+         followers{
+            _id
+            username
+         }
       }
    }
 `;
@@ -73,16 +81,16 @@ export const QUERY_ME = gql`
          calorie
          details
        }
+       follow{
+         _id
+         username
+      }
+      followers{
+         _id
+         username
+      }
       }
    }
 `;
 
-export const QUERY_ROUTINES = gql`
-   query routines {
-      routine {
-         title
-         workoutRoutine
-      }
-   }
-`;
 

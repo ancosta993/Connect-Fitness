@@ -51,3 +51,15 @@ export const ADD_DIET = gql`
     }
   }
 `;
+
+export const ADD_FOLLOWER = gql`
+   mutation addFollower($followerId: ID!){
+    addFollower(followerId: $followerId) {
+      _id
+      username
+      follow {
+        username
+      }
+    }
+   }
+`;

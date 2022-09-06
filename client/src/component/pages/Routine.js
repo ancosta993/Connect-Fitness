@@ -79,17 +79,14 @@ const Routine = () => {
     };
 
     //for dialog start
-   const [open, setOpen] = useState(false);
-
-   const handleClickOpen = () => {
-     setOpen(true);
-   };
- 
-   const handleClose = () => {
-     setOpen(false);
-   };
-
-   // for dialo ends
+    const [open, setOpen] = useState(false);
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
+    // for dialo ends
 
     return (
 

@@ -24,7 +24,9 @@ const resolvers = {
             const userData = await User.findById({ _id: context.user._id })
                .select('-_v -password')
                .populate('diet')
-               .populate('routine');
+               .populate('routine')
+               .populate('follow')
+               .populate('followers');
 
             return userData;
          }
