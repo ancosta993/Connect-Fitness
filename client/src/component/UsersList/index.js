@@ -41,8 +41,8 @@ const UsersList = ({users}) => {
                      </CardContent>
 
                      <CardActions>
-                        <Button size='medium' variant='outlined'>
-                           <Link to={`/dashboard/${user.username}`}>Visit</Link>
+                        <Button size='small' sx={{ml:'0.5rem'}} variant='outlined'>
+                           <Link style={{border:'none', padding:'0px'}} to={`/dashboard/${user.username}`}>Visit</Link>
                         </Button>
                      </CardActions>
                   </Card>

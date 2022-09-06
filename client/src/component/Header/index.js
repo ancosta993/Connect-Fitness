@@ -9,6 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SportsGymnasticsIcon from '@mui/icons-material/SportsGymnastics';
 
 const Header = () => {
   const logout = event => {
@@ -25,16 +26,22 @@ const Header = () => {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
+            sx={{ ml: 2 }}
           >
-            <MenuIcon />
+          <SportsGymnasticsIcon sx={{ width:'2rem', height:'2rem'}} />
           </IconButton>
   
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          {/* <Typography variant="h5" component="div" sx={{ flexGrow: 1}}>
             <Link to='/'>
               FITNESS MEETUP
             </Link>
-          </Typography>
+          </Typography> */}
+
+          <Link to='/' style={{flexGrow: 1}}>
+            <Typography variant="h5" component="div" sx={{'&:hover':{cursor:'pointer'}}}>
+              FITNESS MEETUP
+            </Typography>
+          </Link>
 
           {!Auth.loggedIn() ? (
             <>

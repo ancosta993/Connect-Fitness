@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import CarouselComp from '../CarouselComp';
 import HomeCard from '../HomeCard';
+import Button from '@mui/material/Button';
 // import the pictures to render in carousel
 import image_1 from "../../assets/carousel_image/carousel-image-1.jpg";
 import image_2 from "../../assets/carousel_image/carousel-image-2.jpg";
@@ -31,9 +32,14 @@ const Home = () => {
                   <HomeCard />
                </Grid>
                <Grid item xs={12} md={3}>
-                  <Box component='div' style={{background: 'gray'}}>
-                     <Paper sx={{height:"100px"}}>
-                        Content
+                  <Box component='div' sx={{mt:'6rem'}}>
+                     <Paper sx={{display:'flex',backgroundColor:'#F5F7DC'}}>
+                        <Typography component='p' sx ={{m:'3rem', pt:'2rem', pb:'2rem'}} >Donation is never required but it is always appreciated.
+                           As much as $1 helps immensely for a site like this to run without adds.
+                        </Typography>
+                        <Button variant='contained' size='large'>
+                           Donate
+                        </Button>
                      </Paper>
                   </Box>
                </Grid>
