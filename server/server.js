@@ -28,6 +28,12 @@ await server.start();
 // integrate our Apollo server with the Express application as middleware
 server.applyMiddleware({ app });
 
+ // Serve up static assets
+ if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
+
+
 db.once('open', () => {
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
