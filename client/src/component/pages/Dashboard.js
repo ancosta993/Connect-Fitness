@@ -51,12 +51,10 @@ const Dashboard = () => {
          return(
             <RoutineComp user={user}/>
          )
-      } else if (value===1) {
+      } else {
          return(
             <DietComp user={user} />
          )
-      } else {
-         return(<div>Blogs</div>)
       }
    }
 

@@ -8,7 +8,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 
-import {Link, Navigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 //import form elements 
 import FormControl from '@mui/material/FormControl';
@@ -70,7 +70,7 @@ const Routine = () => {
         try {
             if(Auth.loggedIn()){
                 const {data} = await addDiet({ variables: {...formData}});
-                return <Navigate to='/dashboard' />
+                window.location.assign('/dashboard');
             } else {
                 handleClickOpen()
             }     
