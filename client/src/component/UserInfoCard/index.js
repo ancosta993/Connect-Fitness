@@ -13,12 +13,13 @@ import IconButton from '@mui/material/IconButton';
 import Chip from '@mui/material/Chip';
 import Button from '@mui/material/Button';
 
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 
 import { Typography} from '@mui/material';
 import {GrEdit} from 'react-icons/gr';
 
 const UserInfoCard = ({user}) => {
+   const {username: userParam} = useParams();
 
    return (
       <>
@@ -70,14 +71,18 @@ const UserInfoCard = ({user}) => {
                         </Typography>
                      </Grid>
 
-                     <Grid item>
+                     {!userParam && 
+                        <>
+                        <Grid item>
                         <Button variant='outlined' size='small'>
                            <Link style={{border:'none', padding:'0px'}} to='/newroutine'>Add workout</Link>
                         </Button>
                         <Button sx={{ml:'0.5rem'}} variant='outlined' size='small'>
                            <Link style={{border:'none', padding:'0px'}}  to='/newdiet'>Add diet</Link>
                         </Button>
-                     </Grid>
+                        </Grid>
+                        </>
+                     }
                   </Grid>
                }
             />
