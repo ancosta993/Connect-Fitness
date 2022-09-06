@@ -6,13 +6,17 @@ const resolvers = {
    Query: {
       users: async () => {
          return User.find()
-           .select('-__v -password');
+           .select('-__v -password')
+           .populate('follow')
+           .populate('followers');
       },
       user: async(parents, {username}) => {
          return User.findOne({username})
             .select('-__v -password')
             .populate('diet')
-            .populate('routine');
+            .populate('routine')
+            .populate('follow')
+            .populate('followers')
 
       },
       me: async(parents, args, context) => {
@@ -90,6 +94,25 @@ const resolvers = {
 
          throw new AuthenticationError('You need to be logged In!');
       },
+
+      addFollower: async(parent, {followerId}, context) => {
+         if(context.user){
+            const updatedUser = await User.findOneAndUpdate(
+               {_id:context.user._id},
+               {$addToSet:{follow:followerId}},
+               {new:true}
+            ).populate('follow');
+
+            const updatedFollower = await User.findOneAndUpdate(
+               {_id: followerId},
+               {$addToSet:{followers:context.user._id}},
+               {new:true}
+            ).populate('followers');
+
+            return updatedUser
+         }
+         throw new AuthenticationError('You need to be logged in!')
+      }
    }
 
 }

@@ -56,7 +56,20 @@ const userSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'Routine'
          }
+      ],
+      follow:[
+         {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+         }
+      ],
+      followers: [
+         {
+            type: Schema.Types.ObjectId,
+            ref:'User'
+         }
       ]
+
    },
    {
       toJSON: {

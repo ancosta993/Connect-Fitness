@@ -12,6 +12,8 @@ const typeDefs = gql `
       description: String
       diet: [Diet]
       routine: [Routine]
+      follow: [User]
+      followers: [User]
    }
 
 
@@ -62,6 +64,7 @@ const typeDefs = gql `
       login(email: String!, password: String!): Auth
       addDiet(name: String!, mealTime: String!, calorie: Int, details: String): Diet
       addRoutine(title: String!, workoutText: String!, day:String!, reps:String, sets:String, duration: String): Routine
+      addFollower(followerId: ID!): User
    }
 `;
 
