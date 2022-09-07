@@ -7,6 +7,7 @@ const CarouselComp = ({items}) => {
       <Carousel showThumbs={false} infiniteLoop={true} autoPlay={true} interval={3500}>
          {items.map(item => <div style={{width:"100%", height:'30em'}} key={item.id}>
                <img src={item.image} alt={`item_${item.id}`} style={{width:"100%", height:"100%", objectFit:'cover'}} />
+               <p style={{fontSize:'1.8rem', backgroundColor:'black', padding:'1rem'}} className='legend'>{item.text}</p>
          </div>)}
       </Carousel>
       

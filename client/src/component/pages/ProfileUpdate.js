@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import TextField  from '@mui/material/TextField';
 import Auth from '../../utils/auth';
 
-import {useNavigate} from 'react-router-dom';
+// import {useNavigate} from 'react-router-dom';
 
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -17,7 +17,7 @@ import FormLabel from '@mui/material/FormLabel';
 const ProfileUpdate = () => {
    const [updateUser, { error }] = useMutation(UPDATE_USER);
    const [formData, setFormData] = useState({gender:'', weight:'', dateOfBirth:'', level:'', description:''});
-   const Navigate = useNavigate();
+
 
    // use this function to link the state with the form data.
    const handleChange = (event) => {
@@ -70,7 +70,7 @@ const ProfileUpdate = () => {
          console.log(formData);
          try {
             const {data} = await updateUser({variables: {...formData}})
-            Navigate('/dashboard');
+            window.location.assign('/dashboard');
          } catch(e) {
             console.error(e);
          }

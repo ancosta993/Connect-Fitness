@@ -35,7 +35,7 @@ const HomeCard = () => {
 
                <CardContent sx={{backgroundColor:'#F5F7DC'}}>
                   <Typography variant='body2' color='textSecondary'>
-                     Do you have a speicial workout routine that you think other would like? Post it here for others to see and use!
+                     Do you have a special workout routine that you think other would like? Post it here for others to see and use!
                   </Typography>
                </CardContent>
 

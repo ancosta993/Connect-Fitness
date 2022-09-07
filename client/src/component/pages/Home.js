@@ -14,9 +14,9 @@ import { Typography } from '@mui/material';
 const Home = () => {
 
    const [carItems, setCarItems] = useState([
-      {id:1, image: image_1},
-      {id:2, image: image_2},
-      {id:3, image: image_3} 
+      {id:1, image: image_1, text:"Welcome to Fitness Closeness. A place where you can see and share workouts and diets with users around the world"},
+      {id:2, image: image_2, text:'Whether you are looking to build muscle or run any distance, Fitness Closeness users have a plan for you to crush your goals!'},
+      {id:3, image: image_3, text:"Don't like your current diet? Use Fitness Closeness to get new food ideas or share your own!"} 
    ]);
 
    return(

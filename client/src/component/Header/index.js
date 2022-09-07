@@ -39,7 +39,7 @@ const Header = () => {
 
           <Link to='/' style={{flexGrow: 1}}>
             <Typography variant="h5" component="div" sx={{'&:hover':{cursor:'pointer'}}}>
-              FITNESS MEETUP
+              FITNESS CLOSENESS
             </Typography>
           </Link>
 
