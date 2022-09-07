@@ -10,6 +10,7 @@ import UserInfoTab from '../UserInfoTab'
 // import the routine diet and blog pages
 import RoutineComp from '../RoutineComp/RoutineComp';
 import DietComp from '../DietComp/DietComp';
+import { Typography } from '@mui/material';
 
 const Dashboard = () => {
    // required states for the Nav Tabs
@@ -34,7 +35,7 @@ const Dashboard = () => {
     }
 
     if(loading) {
-      return <div>Loading...</div>
+      return <Typography sx={{display:'flex', justifyContent:'center' ,ml:'5rem', mr:'5rem', mb:'10rem', mt:'5rem', fontWeight:'bold', fontSize:'5rem'}}>Loading...</Typography>
     }
 
     if(!user?.username) {

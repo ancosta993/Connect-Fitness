@@ -131,9 +131,20 @@ const UserInfoCard = ({user}) => {
                         )}
                      </Grid>
                      <Grid item>
-                        <Button size='small' variant='outlined' sx={{ml:'0.5rem'}}>
-                           <Link to ={`/followersList/${user.username}`} style={{border:'none', padding:'0px'}} >Followers</Link>
-                        </Button>
+                        {Auth.loggedIn() ? (
+                           <>
+                           <Button size='small' variant='outlined' sx={{ml:'0.5rem'}}>
+                              <Link to ={`/followersList`} style={{border:'none', padding:'0px'}} >Followers</Link>
+                           </Button>
+                           </>
+                           
+                        ):(
+                           <>
+                           <Button size='small' variant='outlined' sx={{ml:'0.5rem'}}>
+                              <Link to ={`/followersList/${user.username}`} style={{border:'none', padding:'0px'}} >Followers</Link>
+                           </Button>
+                           </> 
+                        )}
                         
                      </Grid>
                   </Grid>
