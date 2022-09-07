@@ -75,7 +75,7 @@ const LoginPage = () => {
   
    return(
       <section className='signup-container'>
-         <div className='signup-placeholder'>Text</div>
+         <div className='signup-placeholder'>"A champion is simply someone who didn't give up when they wanted to" - Tom Landry</div>
          <form noValidate className='signup-form' onSubmit={handleSubmit}>
             <h1 className='signup-title'>Let's Start!</h1>
             <div>

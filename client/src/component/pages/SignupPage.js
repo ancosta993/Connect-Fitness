@@ -109,7 +109,7 @@ const SignupPage = () => {
 
    return(
       <section className='signup-container'>
-         <div className='signup-placeholder'>Text</div>
+         <div className='signup-placeholder'>"If something stands between you and your success, move it. Never be denied" - Dwayne "The Rock" Johnson</div>
          <form noValidate className='signup-form' onSubmit={handleSubmit}>
             <h1 className='signup-title'>Let's Start!</h1>
             <div>
