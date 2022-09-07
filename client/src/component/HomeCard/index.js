@@ -14,7 +14,7 @@ import {TiGroup} from 'react-icons/ti';
 
 const HomeCard = () => {
    return(
-      <Grid container spacing={3}>
+      <Grid container spacing={3} sx={{display:"flex", justifyContent:"center"}} >
          <Grid item xs={4} md={4}>
             <Card>
                <CardHeader 

@@ -14,9 +14,9 @@ import { Typography } from '@mui/material';
 const Home = () => {
 
    const [carItems, setCarItems] = useState([
-      {id:1, image: image_1},
-      {id:2, image: image_2},
-      {id:3, image: image_3} 
+      {id:1, image: image_1, text: 'Create and share your workout routine'},
+      {id:2, image: image_2, text: 'Learn from others'},
+      {id:3, image: image_3, text: 'Track your diet'} 
    ]);
 
    return(
@@ -36,8 +36,8 @@ const Home = () => {
          <Box>
          <Grid>
             <Grid item xs={12} md={3}>
-                  <Box component='div'>
-                     <Paper sx={{m: 5, textAlign: "center", backgroundColor: "var(--primary)", pb: 2}}>
+                  <Box component='div' sx={{ display:"flex", justifyContent:"center"}}>
+                     <Paper sx={{m: 5, textAlign: "center", backgroundColor: "var(--primary)", p: "1rem", color:"var(--light)"}}>
                         <Typography component='p' sx ={{pt:'1rem', pb:'1rem'}} >Donation is never required, but it is always appreciated!
                            As much as $1 helps immensely for Connect Fitness to run without ads.
                         </Typography>
