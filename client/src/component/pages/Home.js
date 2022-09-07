@@ -34,8 +34,8 @@ const Home = () => {
                <Grid item xs={12} md={3}>
                   <Box component='div' sx={{mt:'6rem'}}>
                      <Paper sx={{display:'flex',backgroundColor:'#F5F7DC'}}>
-                        <Typography component='p' sx ={{m:'3rem', pt:'2rem', pb:'2rem'}} >Donation is never required but it is always appreciated.
-                           As much as $1 helps immensely for a site like this to run without adds.
+                        <Typography component='p' sx ={{m:'3rem', pt:'2rem', pb:'2rem'}} >Donations are not required but are always appreciated!
+                           Even as little as $1 helps immensely for an independent site like this to run without ads.
                         </Typography>
                         <Button variant='contained' size='large'>
                            Donate
