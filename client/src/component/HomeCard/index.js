@@ -24,8 +24,8 @@ const HomeCard = () => {
                         <BiDumbbell />
                      </IconButton>
                   }
-                  title = 'Show Off Your Routine'
-                  subheader = 'For others aswell!'
+                  title = 'Show Off Your Workout!'
+                  subheader = "With your help others can reach their goals!"
                />
                <CardMedia 
                   component = 'img'
@@ -35,7 +35,7 @@ const HomeCard = () => {
 
                <CardContent sx={{backgroundColor:'#F5F7DC'}}>
                   <Typography variant='body2' color='textSecondary'>
-                     Create your personal routine and share it others! Create your routine now!
+                     Do you have a speicial workout routine that you think other would like? Post it here for others to see and use!
                   </Typography>
                </CardContent>
 
@@ -60,8 +60,8 @@ const HomeCard = () => {
                         <MdFoodBank />
                      </IconButton>
                   }
-                  title = 'Create Your Diet'
-                  subheader = 'Tasty and Healthy'
+                  title = 'Show Off Your Meals!'
+                  subheader = 'Help others break away from the same old same old!'
                />
                <CardMedia 
                   component = 'img'
@@ -70,7 +70,7 @@ const HomeCard = () => {
                />
                 <CardContent sx={{backgroundColor:'#F5F7DC'}}>
                   <Typography variant='body2' color='textSecondary'>
-                     Create your personal routine and share it others! Create your routine now!
+                     Post your favorite healthy meals for others to see and create themselves!
                   </Typography>
                </CardContent>
                <CardActions sx={{backgroundColor:'#F5F7DC'}}>
@@ -80,7 +80,7 @@ const HomeCard = () => {
                      backgroundColor: "red" }}} 
                      size='large'
                      >
-                        <Link to='/newdiet'>Eat Now</Link>   
+                        <Link to='/newdiet'>Share Now</Link>   
                   </Button>
                </CardActions> 
             </Card>
@@ -94,8 +94,8 @@ const HomeCard = () => {
                         <TiGroup />
                      </IconButton>
                   }
-                  title = 'Learn about Others'
-                  subheader = 'See who is working harder'
+                  title = 'Learn From Others'
+                  subheader = 'See how YOU can work harder!'
                />
                <CardMedia 
                   component = 'img'
@@ -104,7 +104,7 @@ const HomeCard = () => {
                />
                 <CardContent sx={{backgroundColor:'#F5F7DC'}}>
                   <Typography variant='body2' color='textSecondary'>
-                     Create your personal routine and share it others! Create your routine now!
+                     You don't just need to create content for others! Use the platform to power up your workouts and diet as well!
                   </Typography>
                </CardContent>
                <CardActions sx={{backgroundColor:'#F5F7DC'}}>
@@ -114,7 +114,7 @@ const HomeCard = () => {
                      backgroundColor: "red" }}} 
                      size='large'
                      >
-                        <Link to='/meetothers'>Meet Now</Link>
+                        <Link to='/meetothers'>Learn Now</Link>
                   </Button>
                </CardActions> 
             </Card>
