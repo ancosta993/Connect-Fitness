@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar'
@@ -6,7 +6,7 @@ import { Typography } from '@mui/material';
 
 const FollowList = ({user}) => {
    const {follow} = user;
-   
+
    return(
       <>
          <Typography sx={{ml:'1rem', mb:'0.2rem'}}>User Follows</Typography>

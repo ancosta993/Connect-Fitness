@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Avatar from '@mui/material/Avatar';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -31,10 +31,11 @@ import {GrEdit} from 'react-icons/gr';
 import {useMutation} from '@apollo/client';
 import {ADD_FOLLOWER} from '../../utils/mutations';
 
-const UserInfoCard = ({user}) => {
 
+const UserInfoCard = ({user}) => {
    const [addFollower] = useMutation(ADD_FOLLOWER);
    const { username: userParam } = useParams();
+
 
    const handleFollower = async () => {
       try {
@@ -43,6 +44,7 @@ const UserInfoCard = ({user}) => {
            variables: {followerId: user._id}
             });
             handleOpenConfirm();
+            window.location.reload();
          } else {
             handleOpenDeny();
          }
