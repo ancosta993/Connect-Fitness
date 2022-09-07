@@ -113,7 +113,7 @@ const Routine = () => {
                 {/* Selecting the day */}
                 <Box sx={{ minWidth: 120 }}>
                     <FormControl fullWidth>
-                        <InputLabel>Day of the week</InputLabel>
+                        <InputLabel>Meal Time</InputLabel>
                         <Select
                             sx={{width:'20ch'}}
                             name='mealTime'
