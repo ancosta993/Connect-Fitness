@@ -8,7 +8,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 //import form elements 
 import FormControl from '@mui/material/FormControl';
@@ -29,6 +29,8 @@ const Routine = () => {
 
     const [addRoutine, { error }] = useMutation(ADD_ROUTINE);
     const [formData, setFormData] = useState({ title: '', workoutText: '', day:"", reps:"", sets:"", duration:""});
+
+    const navigate = useNavigate();
 
     // error states
     const [titleError, setTitleError] = useState(false);
@@ -68,7 +70,7 @@ const Routine = () => {
         try {
             if(Auth.loggedIn()){
                 const {data} = await addRoutine({ variables: {...formData}});
-                window.location.assign('/dashboard');
+                navigate('/dashboard');
             } else {
                 handleClickOpen()
             }     
