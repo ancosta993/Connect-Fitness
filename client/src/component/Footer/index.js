@@ -11,7 +11,7 @@ import { IconButton, Typography } from '@mui/material';
 const Footer = () => {
 
    return(
-      <Box sx={{backgroundColor:"#0F0326", color:'#FFFFFF', pl:'100px'}}>
+      <Box sx={{backgroundColor:"var(--dark)", color:'#FFFFFF', pl:'100px'}}>
          <Grid container>
             <Grid item sx={12} md={6}>
                <List>

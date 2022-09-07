@@ -75,9 +75,8 @@ const LoginPage = () => {
   
    return(
       <section className='signup-container'>
-         <div className='signup-placeholder'>"A champion is simply someone who didn't give up when they wanted to" - Tom Landry</div>
          <form noValidate className='signup-form' onSubmit={handleSubmit}>
-            <h1 className='signup-title'>Let's Start!</h1>
+            <h1 className='signup-title'>Welcome Back!</h1>
             <div>
                <TextField error={emailErr} sx={{width:'35ch'}} name='email' label='email' variant='outlined' onChange={handleChange} type='email'  value={formData.email} required/>
             </div>

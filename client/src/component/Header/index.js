@@ -18,9 +18,9 @@ const Header = () => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1}}>
       <AppBar position="fixed">
-        <Toolbar>
+        <Toolbar sx={{p: .5, backgroundColor:"var(--secondary)" }}>
           <IconButton
             size="large"
             edge="start"
@@ -39,7 +39,7 @@ const Header = () => {
 
           <Link to='/' style={{flexGrow: 1}}>
             <Typography variant="h5" component="div" sx={{'&:hover':{cursor:'pointer'}}}>
-              FITNESS CLOSENESS
+              CONNECT <span className="fit">FITNESS</span> 
             </Typography>
           </Link>
 
@@ -47,7 +47,7 @@ const Header = () => {
             <>
               <Button color='inherit'>
                 <Link to='/meetothers'>
-                  MeetUp!
+                  Meet Others
                 </Link>
               </Button>
               <Button color="inherit">
@@ -71,7 +71,7 @@ const Header = () => {
 
               <Button color='inherit'>
                 <Link to='/meetothers'>
-                  MeetUp!
+                  Meet Others
                 </Link>
               </Button>
               

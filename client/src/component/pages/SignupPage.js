@@ -109,9 +109,8 @@ const SignupPage = () => {
 
    return(
       <section className='signup-container'>
-         <div className='signup-placeholder'>"If something stands between you and your success, move it. Never be denied" - Dwayne "The Rock" Johnson</div>
          <form noValidate className='signup-form' onSubmit={handleSubmit}>
-            <h1 className='signup-title'>Let's Start!</h1>
+            <h1 className='signup-title'>Begin Your Fitness Journey!</h1>
             <div>
                <TextField error={usernameErr} sx={{width:'17ch', mr:'1ch'}} name='username' label='Username' type='text' variant='outlined' onChange={handleChange} value={formData.username} required />
 

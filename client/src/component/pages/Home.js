@@ -14,30 +14,34 @@ import { Typography } from '@mui/material';
 const Home = () => {
 
    const [carItems, setCarItems] = useState([
-      {id:1, image: image_1, text:"Welcome to Fitness Closeness. A place where you can see and share workouts and diets with users around the world"},
-      {id:2, image: image_2, text:'Whether you are looking to build muscle or run any distance, Fitness Closeness users have a plan for you to crush your goals!'},
-      {id:3, image: image_3, text:"Don't like your current diet? Use Fitness Closeness to get new food ideas or share your own!"} 
+      {id:1, image: image_1, text: 'Welcome to Connect Fitness! A place where you can see and share workouts and diets with Connect Fitness users around the world.'},
+      {id:2, image: image_2, text: 'Whether you are looking to build muscle or run any distance, Connect Fitness users have a plan for you to crush your goals!'},
+      {id:3, image: image_3, text: "Don't like your current diet? Use Connect Fitness to get new food ideas or share your own!"} 
    ]);
 
    return(
       <>
          <CarouselComp items={carItems}/>
-         <Box component='div' sx={{pt: "2em", pb:"2em", background: "linear-gradient(0deg, rgba(25,118,210,1) 10%, rgba(52,134,211,1) 47%, rgba(245,247,220,1) 82%)"}}>
+         <Box component='div' sx={{pt: "2em", pb:"4em"}}>
             <Grid container spacing={3}>
-               <Grid item xs={12} md={9}>
-                  <Typography sx={{fontWeight:"bold", textAlign:'Center', fontSize:"3rem", fontFamily:'Roboto', color:'#1976d2'}}>
-                      HERE IS WHAT TO DO
+               <Grid item xs={14} md={12}>
+                  <Typography sx={{fontWeight:"bold", textAlign:'Center', fontSize:"3rem", color:'var(--dark)'}}>
+                      HERE IS WHAT YOU CAN DO
                   </Typography>
 
                   <HomeCard />
                </Grid>
-               <Grid item xs={12} md={3}>
-                  <Box component='div' sx={{mt:'6rem'}}>
-                     <Paper sx={{display:'flex',backgroundColor:'#F5F7DC'}}>
-                        <Typography component='p' sx ={{m:'3rem', pt:'2rem', pb:'2rem'}} >Donations are not required but are always appreciated!
-                           Even as little as $1 helps immensely for an independent site like this to run without ads.
+            </Grid>
+         </Box>
+         <Box>
+         <Grid>
+            <Grid item xs={12} md={3}>
+                  <Box component='div' sx={{ display:"flex", justifyContent:"center"}}>
+                     <Paper sx={{m: 5, textAlign: "center", backgroundColor: "var(--primary)", p: "1rem", color:"var(--light)"}}>
+                        <Typography component='p' sx ={{pt:'1rem', pb:'1rem'}} >Donation is never required, but it is always appreciated!
+                           As much as $1 helps immensely for Connect Fitness to run without ads.
                         </Typography>
-                        <Button variant='contained' size='large'>
+                        <Button variant='contained' size='sm' sx={{backgroundColor: "var(--dark)"}}>
                            Donate
                         </Button>
                      </Paper>
