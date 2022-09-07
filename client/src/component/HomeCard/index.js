@@ -18,7 +18,7 @@ const HomeCard = () => {
          <Grid item xs={4} md={4}>
             <Card>
                <CardHeader 
-                  sx={{backgroundColor:"#1976d2", color:'white'}}
+                  sx={{backgroundColor:"var(--tertiary)", color:'white'}}
                   action ={
                      <IconButton sx={{color:'white'}}>
                         <BiDumbbell />
@@ -40,10 +40,10 @@ const HomeCard = () => {
                </CardContent>
 
                <CardActions>
-                  <Button variant='filled' 
-                     sx={{backgroundColor:'#0F0326', color:'white', 
+               <Button variant='contained' 
+                     sx={{backgroundColor:'var(--primary)', color:'white', 
                      "&:hover": {
-                     backgroundColor: "red" }}} 
+                     backgroundColor: "var(--dark)" }}} 
                      size='large'
                      >
                         <Link to='/newroutine'>Create Now</Link>   
@@ -54,7 +54,7 @@ const HomeCard = () => {
          <Grid item xs={4} md={4}>
             <Card>
                <CardHeader
-                  sx={{backgroundColor:"#1976d2", color:'white'}}
+                  sx={{backgroundColor:"var(--tertiary)", color:'white'}}
                   action = {
                      <IconButton sx={{color:'white'}}>
                         <MdFoodBank />
@@ -74,10 +74,11 @@ const HomeCard = () => {
                   </Typography>
                </CardContent>
                <CardActions>
-                  <Button variant='filled' 
-                     sx={{backgroundColor:'#0F0326', color:'white', 
+               <Button variant='contained' 
+                     sx={{backgroundColor:'var(--primary)', color:'white', 
                      "&:hover": {
-                     backgroundColor: "red" }}} 
+                     backgroundColor: "var(--dark)" }}} 
+                     size='large'
                      >
                         <Link to='/newdiet'>Eat Now</Link>   
                   </Button>
@@ -87,7 +88,7 @@ const HomeCard = () => {
          <Grid item xs={4} md={4}>
             <Card>
                <CardHeader 
-                  sx={{backgroundColor:"#1976d2", color:'white'}}
+                  sx={{backgroundColor:"var(--tertiary)", color:'white'}}
                   action = {
                      <IconButton sx={{color:'white'}}>
                         <TiGroup />
@@ -107,10 +108,10 @@ const HomeCard = () => {
                   </Typography>
                </CardContent>
                <CardActions>
-               <Button variant='filled' 
-                     sx={{backgroundColor:'#0F0326', color:'white', 
+               <Button variant='contained' 
+                     sx={{backgroundColor:'var(--primary)', color:'white', 
                      "&:hover": {
-                     backgroundColor: "red" }}} 
+                     backgroundColor: "var(--dark)" }}} 
                      size='large'
                      >
                         <Link to='/meetothers'>Meet Now</Link>

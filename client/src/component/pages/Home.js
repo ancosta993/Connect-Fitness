@@ -22,10 +22,10 @@ const Home = () => {
    return(
       <>
          <CarouselComp items={carItems}/>
-         <Box component='div' sx={{pt: "2em", pb:"2em", background: "linear-gradient(0deg, rgba(25,118,210,1) 10%, rgba(52,134,211,1) 47%, rgba(255,255,255,1) 82%)"}}>
+         <Box component='div' sx={{pt: "2em", pb:"4em"}}>
             <Grid container spacing={3}>
-               <Grid item xs={14} md={11}>
-                  <Typography sx={{fontWeight:"bold", textAlign:'Center', fontSize:"3rem", fontFamily:'Roboto', color:'#1976d2'}}>
+               <Grid item xs={14} md={12}>
+                  <Typography sx={{fontWeight:"bold", textAlign:'Center', fontSize:"3rem", color:'var(--dark)'}}>
                       HERE IS WHAT YOU CAN DO
                   </Typography>
 
@@ -34,14 +34,14 @@ const Home = () => {
             </Grid>
          </Box>
          <Box>
-            <Grid>
+         <Grid>
             <Grid item xs={12} md={3}>
-                  <Box component='div' sx={{mt:'6rem'}}>
-                     <Paper sx={{display:'flex'}}>
-                        <Typography component='p' sx ={{m:'3rem', pt:'2rem', pb:'2rem'}} >Donation is never required, but it is always appreciated!
+                  <Box component='div'>
+                     <Paper sx={{m: 5, textAlign: "center", backgroundColor: "var(--primary)", pb: 2}}>
+                        <Typography component='p' sx ={{pt:'1rem', pb:'1rem'}} >Donation is never required, but it is always appreciated!
                            As much as $1 helps immensely for Connect Fitness to run without ads.
                         </Typography>
-                        <Button variant='contained' size='large'>
+                        <Button variant='contained' size='sm' sx={{backgroundColor: "var(--dark)"}}>
                            Donate
                         </Button>
                      </Paper>
