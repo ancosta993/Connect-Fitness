@@ -8,7 +8,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 //import form elements 
 import FormControl from '@mui/material/FormControl';
@@ -29,6 +29,7 @@ const Routine = () => {
 
     const [addDiet, { error }] = useMutation(ADD_DIET);
     const [formData, setFormData] = useState({ name: '', mealTime: '', calorie:"", details:""});
+    const navigate = useNavigate();
 
     // error states
     const [nameError, setNameError] = useState(false);
@@ -70,7 +71,7 @@ const Routine = () => {
         try {
             if(Auth.loggedIn()){
                 const {data} = await addDiet({ variables: {...formData}});
-                window.location.assign('/dashboard');
+                navigate('/dashboard');
             } else {
                 handleClickOpen()
             }     
@@ -113,7 +114,7 @@ const Routine = () => {
                 {/* Selecting the day */}
                 <Box sx={{ minWidth: 120 }}>
                     <FormControl fullWidth>
-                        <InputLabel>Day of the week</InputLabel>
+                        <InputLabel>Meal Time</InputLabel>
                         <Select
                             sx={{width:'20ch'}}
                             name='mealTime'

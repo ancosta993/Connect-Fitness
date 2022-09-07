@@ -80,7 +80,7 @@ const HomeCard = () => {
                      backgroundColor: "var(--dark)" }}} 
                      size='large'
                      >
-                        <Link to='/newdiet'>Eat Now</Link>   
+                        <Link to='/newdiet'>Share Now</Link>   
                   </Button>
                </CardActions> 
             </Card>
@@ -114,7 +114,7 @@ const HomeCard = () => {
                      backgroundColor: "var(--dark)" }}} 
                      size='large'
                      >
-                        <Link to='/meetothers'>Meet Now</Link>
+                        <Link to='/meetothers'>Learn Now</Link>
                   </Button>
                </CardActions> 
             </Card>

@@ -1,70 +1,46 @@
 # Fitness Meetup!
 
+## Description
+A health and fitness application where users can sign up and log in to socialize and post with other gym goers. Users can post their workout, what was worked out, and time of day they worked out. Users can also post and see other users posts when it comes to diet and health conscious meals.
+
+Created to have a space for gyn beginners and gym rats to come together and share workouts, motivation, and meal plans!
+
+![image](https://user-images.githubusercontent.com/102200085/188796375-5fe89d13-2b01-4f73-a93b-e3ef92c5b933.png)
+
+Image above shows the homepage with what the application is about. The homepage features a great looking appBar, along with links for showing off your routine, sharing your meals, learning from others, and even a donation button to keep our site ad free!
+
+![image](https://user-images.githubusercontent.com/102200085/188796544-d0909d03-4299-4e23-90f5-71c250cb33fa.png)
+
+When signing up, there is a simple, yet sleek design for new users to sign up and create an account
+
+![image](https://user-images.githubusercontent.com/102200085/188796590-c0219b5a-9551-4d11-8a0a-c90394619993.png)
+
+For the login section, it is very easy to log in and get into your account! 
+
+## Contributors 
+- Joseph Pizzo
+- Anthony D'Costa
+- Sean McDaniel
+
+## Tests
+REACT-scripts test was used for testing out 
+
+## Installation
+Installation of our application is very simple. Simply Git pull the code from the main branch. once you are in your terminal be sure to type npm i to ensure that all of the correct dependencies are downloaeded. Once this download has been completed, simply run npm start to view the applicatoin. This can also be seen with the Heroku link listed below! 
+
+## Technologies Used
+- REACT
+- Material UI
+- Express.js
+- Javascript
+- HTML
+- CSS
+- Heroku and MongoDB Atlas to post
 
 
-## Description 
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Links
+Heroku Link: 
+REACT: https://www.npmjs.com/package/react
+EXPRESS: https://www.npmjs.com/package/express
+MATERIAL UI: https://mui.com/

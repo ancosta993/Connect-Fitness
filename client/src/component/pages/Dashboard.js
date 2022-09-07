@@ -10,6 +10,7 @@ import UserInfoTab from '../UserInfoTab'
 // import the routine diet and blog pages
 import RoutineComp from '../RoutineComp/RoutineComp';
 import DietComp from '../DietComp/DietComp';
+import { Typography } from '@mui/material';
 
 const Dashboard = () => {
    // required states for the Nav Tabs
@@ -21,20 +22,20 @@ const Dashboard = () => {
 
    const {username: userParam} = useParams();
    // if a parameter is provided in the URL, then use that parameter to render the infromation about that user.
-
+  
    const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
       variables: { username: userParam }
     });
 
     // check the data from whichever query returned the result
     const user = data?.me || data?.user || {};
-
+   
     if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
       return <Navigate to="/dashboard" />;
     }
 
     if(loading) {
-      return <div>Loading...</div>
+      return <Typography sx={{display:'flex', justifyContent:'center' ,ml:'5rem', mr:'5rem', mb:'10rem', mt:'5rem', fontWeight:'bold', fontSize:'5rem'}}>Loading...</Typography>
     }
 
     if(!user?.username) {

@@ -20,7 +20,6 @@ import DialogActions from '@mui/material/DialogActions';
 import Auth from '../../utils/auth';
 
 // importing all the followers component
-import FollowerList from '../FollowerList';
 import FollowList from '../FollowList';
 
 import {Link, useParams} from 'react-router-dom';
@@ -31,10 +30,11 @@ import {GrEdit} from 'react-icons/gr';
 import {useMutation} from '@apollo/client';
 import {ADD_FOLLOWER} from '../../utils/mutations';
 
-const UserInfoCard = ({user}) => {
 
+const UserInfoCard = ({user}) => {
    const [addFollower] = useMutation(ADD_FOLLOWER);
    const { username: userParam } = useParams();
+
 
    const handleFollower = async () => {
       try {
@@ -93,10 +93,12 @@ const UserInfoCard = ({user}) => {
                   </>
                }
                action = {
-                  <IconButton sx={{mr:'15rem'}}>
-                     <GrEdit/>
-                  </IconButton>
-                  
+                  <IconButton sx={{mr:'15rem', '&:hover':{border:'none',backgroundColor:'white'}}}>
+                     {!userParam && 
+                     (<Link style={{border:'none', padding:'0px'}} to ='/profileUpdate'>
+                        <GrEdit/>
+                     </Link>)}
+                  </IconButton>  
                }
                subheader = {
                   <Grid container spacing={5}>
@@ -131,11 +133,21 @@ const UserInfoCard = ({user}) => {
                         )}
                      </Grid>
                      <Grid item>
-                        {user.followers.length ? (
-                           <FollowerList user={user}/>
+                        {!userParam ? (
+                           <>
+                           <Button size='small' variant='outlined' sx={{ml:'0.5rem'}}>
+                              <Link to ={`/followersList`} style={{border:'none', padding:'0px'}} >Followers</Link>
+                           </Button>
+                           </>
+                           
                         ):(
-                           <Typography sx={{ml:'1rem', mb:'0.2rem'}}>No one follows the user</Typography>
+                           <>
+                           <Button size='small' variant='outlined' sx={{ml:'0.5rem'}}>
+                              <Link to ={`/followersList/${user.username}`} style={{border:'none', padding:'0px'}} >Followers</Link>
+                           </Button>
+                           </> 
                         )}
+                        
                      </Grid>
                   </Grid>
                }

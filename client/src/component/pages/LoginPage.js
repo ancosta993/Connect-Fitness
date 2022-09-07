@@ -78,11 +78,11 @@ const LoginPage = () => {
          <form noValidate className='signup-form' onSubmit={handleSubmit}>
             <h1 className='signup-title'>Welcome Back!</h1>
             <div>
-               <TextField error={emailErr} sx={{width:'35ch'}} name='email' label='email' variant='outlined' onChange={handleChange}  value={formData.email} required/>
+               <TextField error={emailErr} sx={{width:'35ch'}} name='email' label='email' variant='outlined' onChange={handleChange} type='email'  value={formData.email} required/>
             </div>
 
             <div>
-               <TextField error={passErr} sx={{width:'35ch'}} name='password' label='password' variant='outlined' onChange={handleChange} value={formData.password} required />
+               <TextField error={passErr} sx={{width:'35ch'}} name='password' label='password' variant='outlined' type='password' onChange={handleChange} value={formData.password} required />
             </div>
             
             <div>

@@ -96,6 +96,19 @@ const resolvers = {
 
          throw new AuthenticationError('You need to be logged In!');
       },
+      updateUser: async(parent, args, context) => {
+         if(context.user){
+            const updatedUser = await User.findOneAndUpdate(
+               {_id:context.user._id},
+               {...args},
+               {new:true}
+            )
+
+            return updatedUser;
+         }
+
+         throw new AuthenticationError('You need to be logged In!');
+      },
 
       addFollower: async(parent, {followerId}, context) => {
          if(context.user){
