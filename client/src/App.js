@@ -10,6 +10,7 @@ import Home from './component/pages/Home';
 import UsersPage from './component/pages/UsersPage';
 import Dashboard from './component/pages/Dashboard';
 import Contact from './component/pages/Contact';
+import FollowersList from './component/pages/FollowersList'
 
 import Header from './component/Header/';
 import Routine from './component/pages/Routine';
@@ -82,10 +83,15 @@ function App() {
               element={<NoMatch />}
             />
             <Route
+                path="/followersList">
+                <Route path=":username"  element={<FollowersList />} />
+                <Route path="" element={<FollowersList />} />
+            </Route>
+            <Route
                 path="/dashboard">
                 <Route path=":username"  element={<Dashboard />} />
                 <Route path="" element={<Dashboard />} />
-              </Route>
+            </Route>
           </Routes>
         <Footer/>
       </Router>

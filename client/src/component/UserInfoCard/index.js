@@ -20,7 +20,6 @@ import DialogActions from '@mui/material/DialogActions';
 import Auth from '../../utils/auth';
 
 // importing all the followers component
-import FollowerList from '../FollowerList';
 import FollowList from '../FollowList';
 
 import {Link, useParams} from 'react-router-dom';
@@ -132,11 +131,10 @@ const UserInfoCard = ({user}) => {
                         )}
                      </Grid>
                      <Grid item>
-                        {user.followers.length ? (
-                           <FollowerList user={user}/>
-                        ):(
-                           <Typography sx={{ml:'1rem', mb:'0.2rem'}}>No one follows the user</Typography>
-                        )}
+                        <Button size='small' variant='outlined' sx={{ml:'0.5rem'}}>
+                           <Link to ={`/followersList/${user.username}`} style={{border:'none', padding:'0px'}} >Followers</Link>
+                        </Button>
+                        
                      </Grid>
                   </Grid>
                }
