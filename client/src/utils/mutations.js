@@ -63,3 +63,15 @@ export const ADD_FOLLOWER = gql`
     }
    }
 `;
+
+export const UPDATE_USER = gql`
+mutation updateUser($gender:String!, $weight:Float, $dateOfBirth:String!, $level:String!, $description:String!){
+  updateUser(gender:$gender,weight:$weight,dateOfBirth:$dateOfBirth, level:$level, description:$description){
+    _id
+    username
+    level
+    age
+    weight
+  }
+}
+`;

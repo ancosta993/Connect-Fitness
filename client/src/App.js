@@ -10,7 +10,8 @@ import Home from './component/pages/Home';
 import UsersPage from './component/pages/UsersPage';
 import Dashboard from './component/pages/Dashboard';
 import Contact from './component/pages/Contact';
-import FollowersList from './component/pages/FollowersList'
+import FollowersList from './component/pages/FollowersList';
+import ProfileUpdate from './component/pages/ProfileUpdate';
 
 import Header from './component/Header/';
 import Routine from './component/pages/Routine';
@@ -81,6 +82,10 @@ function App() {
             <Route
               path="*"
               element={<NoMatch />}
+            />
+            <Route
+              path='/profileUpdate'
+              element ={<ProfileUpdate />}
             />
             <Route
                 path="/followersList">

@@ -65,6 +65,7 @@ const typeDefs = gql `
       addDiet(name: String!, mealTime: String!, calorie: Int, details: String): Diet
       addRoutine(title: String!, workoutText: String!, day:String!, reps:String, sets:String, duration: String): Routine
       addFollower(followerId: ID!): User
+      updateUser(gender: String!, weight:Float, dateOfBirth:String!, level:String!, description:String!): User
    }
 `;
 

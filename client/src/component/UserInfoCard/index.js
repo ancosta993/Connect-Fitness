@@ -93,10 +93,12 @@ const UserInfoCard = ({user}) => {
                   </>
                }
                action = {
-                  <IconButton sx={{mr:'15rem'}}>
-                     <GrEdit/>
-                  </IconButton>
-                  
+                  <IconButton sx={{mr:'15rem', '&:hover':{border:'none',backgroundColor:'white'}}}>
+                     {!userParam && 
+                     (<Link style={{border:'none', padding:'0px'}} to ='/profileUpdate'>
+                        <GrEdit/>
+                     </Link>)}
+                  </IconButton>  
                }
                subheader = {
                   <Grid container spacing={5}>
@@ -131,7 +133,7 @@ const UserInfoCard = ({user}) => {
                         )}
                      </Grid>
                      <Grid item>
-                        {Auth.loggedIn() ? (
+                        {!userParam ? (
                            <>
                            <Button size='small' variant='outlined' sx={{ml:'0.5rem'}}>
                               <Link to ={`/followersList`} style={{border:'none', padding:'0px'}} >Followers</Link>
