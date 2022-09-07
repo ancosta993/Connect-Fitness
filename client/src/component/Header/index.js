@@ -39,7 +39,7 @@ const Header = () => {
 
           <Link to='/' style={{flexGrow: 1}}>
             <Typography variant="h5" component="div" sx={{'&:hover':{cursor:'pointer'}}}>
-              FITNESS MEETUP
+              CONNECT FITNESS
             </Typography>
           </Link>
 
@@ -47,7 +47,7 @@ const Header = () => {
             <>
               <Button color='inherit'>
                 <Link to='/meetothers'>
-                  MeetUp!
+                  Meet Others
                 </Link>
               </Button>
               <Button color="inherit">
@@ -76,7 +76,7 @@ const Header = () => {
 
               <Button color='inherit'>
                 <Link to='/meetothers'>
-                  MeetUp!
+                  Meet Others
                 </Link>
               </Button>
               

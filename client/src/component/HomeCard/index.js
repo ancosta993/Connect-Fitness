@@ -25,7 +25,7 @@ const HomeCard = () => {
                      </IconButton>
                   }
                   title = 'Show Off Your Routine'
-                  subheader = 'For others aswell!'
+                  subheader = 'Hold yourself accountable and create a fitness routine to share with your friends.'
                />
                <CardMedia 
                   component = 'img'
@@ -33,13 +33,13 @@ const HomeCard = () => {
                   image = {require('../../assets/card_image/card-image-routine.jpg')}
                />
 
-               <CardContent sx={{backgroundColor:'#F5F7DC'}}>
+               <CardContent>
                   <Typography variant='body2' color='textSecondary'>
-                     Create your personal routine and share it others! Create your routine now!
+                     Be your own personal trainer, create your fitness routine now!
                   </Typography>
                </CardContent>
 
-               <CardActions sx={{backgroundColor:'#F5F7DC'}}>
+               <CardActions>
                   <Button variant='filled' 
                      sx={{backgroundColor:'#0F0326', color:'white', 
                      "&:hover": {
@@ -60,25 +60,24 @@ const HomeCard = () => {
                         <MdFoodBank />
                      </IconButton>
                   }
-                  title = 'Create Your Diet'
-                  subheader = 'Tasty and Healthy'
+                  title = 'Track Your Diet'
+                  subheader = 'Keep track of your diet and show others what you are eating for each meal.'
                />
                <CardMedia 
                   component = 'img'
                   height = '150'
                   image = {require('../../assets/card_image/card-image-diet.jpg')}
                />
-                <CardContent sx={{backgroundColor:'#F5F7DC'}}>
+                <CardContent>
                   <Typography variant='body2' color='textSecondary'>
-                     Create your personal routine and share it others! Create your routine now!
+                     Fitness begins with a healthy lifestyle. Track your diet now!
                   </Typography>
                </CardContent>
-               <CardActions sx={{backgroundColor:'#F5F7DC'}}>
+               <CardActions>
                   <Button variant='filled' 
                      sx={{backgroundColor:'#0F0326', color:'white', 
                      "&:hover": {
                      backgroundColor: "red" }}} 
-                     size='large'
                      >
                         <Link to='/newdiet'>Eat Now</Link>   
                   </Button>
@@ -94,20 +93,20 @@ const HomeCard = () => {
                         <TiGroup />
                      </IconButton>
                   }
-                  title = 'Learn about Others'
-                  subheader = 'See who is working harder'
+                  title = 'Learn About Others'
+                  subheader = 'Learn from your peers. See how other Connect Fitness users are doing.'
                />
                <CardMedia 
                   component = 'img'
                   height = '150'
                   image = {require('../../assets/card_image/card-image-meetother.jpg')}
                />
-                <CardContent sx={{backgroundColor:'#F5F7DC'}}>
+                <CardContent>
                   <Typography variant='body2' color='textSecondary'>
-                     Create your personal routine and share it others! Create your routine now!
+                     You're not in this alone, there are so many others out there!
                   </Typography>
                </CardContent>
-               <CardActions sx={{backgroundColor:'#F5F7DC'}}>
+               <CardActions>
                <Button variant='filled' 
                      sx={{backgroundColor:'#0F0326', color:'white', 
                      "&:hover": {
