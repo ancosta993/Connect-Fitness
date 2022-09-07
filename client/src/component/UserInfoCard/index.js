@@ -44,7 +44,6 @@ const UserInfoCard = ({user}) => {
            variables: {followerId: user._id}
             });
             handleOpenConfirm();
-            window.location.reload();
          } else {
             handleOpenDeny();
          }
