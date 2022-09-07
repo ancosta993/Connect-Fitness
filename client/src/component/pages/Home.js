@@ -14,9 +14,9 @@ import { Typography } from '@mui/material';
 const Home = () => {
 
    const [carItems, setCarItems] = useState([
-      {id:1, image: image_1, text: 'Create and share your workout routine'},
-      {id:2, image: image_2, text: 'Learn from others'},
-      {id:3, image: image_3, text: 'Track your diet'} 
+      {id:1, image: image_1, text: 'Welcome to Connect Fitness! A place where you can see and share workouts and diets with Connect Fitness users around the world.'},
+      {id:2, image: image_2, text: 'Whether you are looking to build muscle or run any distance, Connect Fitness users have a plan for you to crush your goals!'},
+      {id:3, image: image_3, text: "Don't like your current diet? Use Connect Fitness to get new food ideas or share your own!"} 
    ]);
 
    return(
