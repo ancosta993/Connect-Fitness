@@ -191,7 +191,7 @@ const Routine = () => {
                 <DialogTitle>{"You must login to submit"}</DialogTitle>
                 <DialogActions sx={{display:'flex',justifyContent:'center'}}>
                 <Button onClick={handleClose}>Close</Button>
-                <Button><Link to='/login'>Log in</Link></Button>
+                <Button><Link style={{color:'#1976d2'}} to='/login'>Log in</Link></Button>
                 </DialogActions>
             </Dialog>
         </Box>

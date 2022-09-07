@@ -136,14 +136,14 @@ const UserInfoCard = ({user}) => {
                         {!userParam ? (
                            <>
                            <Button size='small' variant='outlined' sx={{ml:'0.5rem'}}>
-                              <Link to ={`/followersList`} style={{border:'none', padding:'0px'}} >Followers</Link>
+                              <Link to ={`/followersList`} style={{border:'none', padding:'0px', color:'#1976d2'}} >Followers</Link>
                            </Button>
                            </>
                            
                         ):(
                            <>
                            <Button size='small' variant='outlined' sx={{ml:'0.5rem'}}>
-                              <Link to ={`/followersList/${user.username}`} style={{border:'none', padding:'0px'}} >Followers</Link>
+                              <Link to ={`/followersList/${user.username}`} style={{border:'none', padding:'0px', color:'#1976d2'}} >Followers</Link>
                            </Button>
                            </> 
                         )}
@@ -157,10 +157,10 @@ const UserInfoCard = ({user}) => {
                {!userParam ? (
                   <>
                      <Button variant='outlined' size='small'>
-                        <Link style={{border:'none', padding:'0px'}} to='/newroutine'>Add workout</Link>
+                        <Link style={{border:'none', padding:'0px', color:'#1976d2'}} to='/newroutine'>Add workout</Link>
                      </Button>
                      <Button sx={{ml:'0.5rem'}} variant='outlined' size='small'>
-                        <Link style={{border:'none', padding:'0px'}}  to='/newdiet'>Add diet</Link>
+                        <Link style={{border:'none', padding:'0px', color:'#1976d2'}}  to='/newdiet'>Add diet</Link>
                      </Button>
                   </>
                ):(
@@ -187,7 +187,7 @@ const UserInfoCard = ({user}) => {
             <DialogTitle>You must log in to follow</DialogTitle>
             <DialogActions sx={{display:'flex',justifyContent:'center'}}>
             <Button onClick={handleCloseDeny}>Close</Button>
-            <Button><Link to='/login'>Log in</Link></Button>
+            <Button><Link style={{color:'#1976d2'}} to='/login'>Log in</Link></Button>
             </DialogActions>
          </Dialog>
          {/* following Deny dialog */}

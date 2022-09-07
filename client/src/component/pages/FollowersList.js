@@ -56,7 +56,7 @@ const FollowersList = () => {
                />
                   <CardActions>
                      <Button variant='outlined' size='small'>
-                        <Link style={{border:'none', padding:'0px'}} to={`/dashboard/${item.username}`}>Visit</Link>
+                        <Link style={{border:'none', padding:'0px', color:'#1976d2'}} to={`/dashboard/${item.username}`}>Visit</Link>
                      </Button>
                   </CardActions>
                </Card>

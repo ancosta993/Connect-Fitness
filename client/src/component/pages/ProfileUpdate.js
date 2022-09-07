@@ -131,7 +131,7 @@ const ProfileUpdate = () => {
             /> 
             <div>
                <Button type='submit' variant="contained" color="primary">
-                  Signup
+                  Update
                </Button>
             </div>
          </form>
